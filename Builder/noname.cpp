@@ -1,9 +1,12 @@
-///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version Jun 17 2015)
-// http://www.wxformbuilder.org/
-//
-// PLEASE DO "NOT" EDIT THIS FILE!
-///////////////////////////////////////////////////////////////////////////
+#include <vector>
+#include <iostream>
+#include <fstream>
+using namespace std;
+struct Usuario {
+	char nombre[50];
+	char contrasena[50];
+	char rol[4];
+};
 
 #include "noname.h"
 
@@ -63,6 +66,20 @@ void Login_GUI::Check(wxCommandEvent& event)
 	// Obtener los valores ingresados por el usuario
 	wxString usuario = Login_Usuario_ingresado->GetValue();
 	wxString contrasenia = Login_Contrasenia_ingresado->GetValue();
+	
+	
+		vector<Usuario> usuarios;
+		ifstream file("Credenciales.bin", std::ios::binary);
+		if (file.is_open()) {
+			Usuario usuario;
+			while (file.read(reinterpret_cast<char*>(&usuario), sizeof(Usuario))) {
+				usuarios.push_back(usuario);
+			}
+			file.close();
+		} else {
+			cerr << "Error al abrir el archivo para lectura.";
+		}
+	
 	
 	// Validación simple (esto es solo un ejemplo, en un caso real debes encriptar y verificar con una base de datos)
 	if (usuario == "admin" && contrasenia == "password")
