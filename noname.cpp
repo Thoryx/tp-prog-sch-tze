@@ -3,7 +3,7 @@
 #include <fstream>
 using namespace std;
 struct Usuario {
-	char nombre[50];
+	char Usuario[50];
 	char contrasena[50];
 	char rol[4];
 };
@@ -63,34 +63,37 @@ Login_GUI::~Login_GUI()
 
 void Login_GUI::Check(wxCommandEvent& event)
 {
+	
 	// Obtener los valores ingresados por el usuario
 	wxString usuario = Login_Usuario_ingresado->GetValue();
 	wxString contrasenia = Login_Contrasenia_ingresado->GetValue();
+	bool noencontrado = true;
 	
-	
-		vector<Usuario> usuarios;
-		ifstream file("Credenciales.bin", std::ios::binary);
-		if (file.is_open()) {
-			Usuario usuario;
-			while (file.read(reinterpret_cast<char*>(&usuario), sizeof(Usuario))) {
-				usuarios.push_back(usuario);
-			}
-			file.close();
-		} else {
-			cerr << "Error al abrir el archivo para lectura.";
+	vector<Usuario> usuarios;
+	ifstream file("Credenciales.dat", std::ios::binary);
+	if (file.is_open()) {
+		Usuario usuario;
+		while (file.read(reinterpret_cast<char*>(&usuario), sizeof(Usuario))) {
+			usuarios.push_back(usuario);
 		}
-	
-	
-	// Validación simple (esto es solo un ejemplo, en un caso real debes encriptar y verificar con una base de datos)
-	if (usuario == "admin" && contrasenia == "password")
-	{
-		wxMessageBox("¡Ingreso exitoso!", "Login", wxOK | wxICON_INFORMATION);
-		// Aquí puedes crear y mostrar la ventana principal
-		Main_GUI* mainWindow = new Main_GUI(NULL);
-		mainWindow->Show();
-		this->Close();  // Cierra la ventana de login
+		file.close();
+	} else {
+		cerr << "Error al abrir el archivo para lectura.";
 	}
-	else
+	
+	
+	for( vector<Usuario>::iterator it=usuarios.begin(); it!=usuarios.end(); ++it ) {  
+		if (usuario == it->Usuario && it->contrasena == contrasenia)
+		{
+			noencontrado=false;
+			wxMessageBox("¡Ingreso exitoso!", "Login", wxOK | wxICON_INFORMATION);
+			// Aquí puedes crear y mostrar la ventana principal
+			Main_GUI* mainWindow = new Main_GUI(NULL);
+			mainWindow->Show();
+			this->Close();  // Cierra la ventana de login
+		}
+	}
+	if (noencontrado)
 	{
 		wxMessageBox("Usuario o contraseña incorrectos", "Error", wxOK | wxICON_ERROR);
 	}

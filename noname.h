@@ -59,6 +59,7 @@ protected:
 	wxButton* b_aniadir;
 	wxButton* b_modificar;
 	wxButton* b_borrar;
+	wxButton* b_AgregarUser;
 	wxListBox* m_listBox1;
 	
 public:
