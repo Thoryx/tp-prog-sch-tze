@@ -102,7 +102,6 @@ Main_GUI::Main_GUI(wxWindow* parent, wxWindowID id, const wxString& title, const
 	: wxFrame(parent, id, title, pos, size, style)
 {
 	this->SetSizeHints(wxDefaultSize, wxDefaultSize);
-	
 	wxFlexGridSizer* fgSizer2 = new wxFlexGridSizer(1, 1, 0, 0);
 	fgSizer2->SetFlexibleDirection(wxBOTH);
 	fgSizer2->SetNonFlexibleGrowMode(wxFLEX_GROWMODE_SPECIFIED);
@@ -143,10 +142,13 @@ Main_GUI::Main_GUI(wxWindow* parent, wxWindowID id, const wxString& title, const
 	b_borrar = new wxButton(this, wxID_ANY, ("Borrar Libro"), wxDefaultPosition, wxDefaultSize, 0);
 	bSizer7->Add(b_borrar, 0, wxALL, 5);
 	
+	b_AgregarUser = new wxButton( this, wxID_ANY, wxT("Registrar Usuario"), wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer7->Add( b_AgregarUser, 0, wxALL, 5 );
+	
 	bSizer4->Add(bSizer7, 1, wxEXPAND, 5);
 	
-	m_listBox1 = new wxListBox(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, 0);
-	bSizer4->Add(m_listBox1, 5, wxALL|wxEXPAND, 5);
+	m_listBox1 = new wxListBox( this, wxID_ANY, wxDefaultPosition, wxSize( 500,500 ), 0, NULL, 0 ); 
+	bSizer4->Add( m_listBox1, 0, wxALL, 5 );
 	
 	fgSizer2->Add(bSizer4, 1, wxEXPAND, 5);
 	
