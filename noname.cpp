@@ -159,8 +159,82 @@ Main_GUI::Main_GUI(wxWindow* parent, wxWindowID id, const wxString& title, const
 	this->Layout();
 	
 	this->Centre(wxBOTH);
+	
+	b_AgregarUser->Connect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(Main_GUI::Registrar), NULL, this);
 }
 
 Main_GUI::~Main_GUI()
 {
+	b_AgregarUser->Disconnect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(Main_GUI::Registrar), NULL, this);
+}
+void Main_GUI::Registrar(wxCommandEvent& event){
+	Agregar_Usuario* mainWindow = new Agregar_Usuario(NULL);
+	mainWindow->Show();
+	this->Close();
+}
+
+Agregar_Usuario::Agregar_Usuario( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxFrame( parent, id, title, pos, size, style )
+{
+	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
+	
+	wxBoxSizer* bSizer8;
+	bSizer8 = new wxBoxSizer( wxVERTICAL );
+	
+	wxBoxSizer* bSizer1;
+	bSizer1 = new wxBoxSizer( wxVERTICAL );
+	
+	m_staticText1 = new wxStaticText( this, wxID_ANY, wxT("Ingrese Su Usuario"), wxPoint( 0,0 ), wxSize( 250,20 ), wxALIGN_CENTRE );
+	m_staticText1->Wrap( 250 );
+	bSizer1->Add( m_staticText1, 0, wxALL, 5 );
+	
+	Login_Usuario_ingresado = new wxTextCtrl( this, wxID_ANY, wxT("Escriba Aqui..."), wxPoint( 2,2 ), wxSize( 250,25 ), wxTE_CENTRE );
+	bSizer1->Add( Login_Usuario_ingresado, 0, wxALL, 5 );
+	
+	
+	bSizer8->Add( bSizer1, 1, wxEXPAND, 5 );
+	
+	wxBoxSizer* bSizer11;
+	bSizer11 = new wxBoxSizer( wxVERTICAL );
+	
+	m_staticText11 = new wxStaticText( this, wxID_ANY, wxT(""), wxPoint( 0,2 ), wxSize( 250,20 ), wxALIGN_CENTRE );
+	m_staticText11->Wrap( 250 );
+	bSizer11->Add( m_staticText11, 0, wxALL, 5 );
+	
+	Login_Contrasenia_ingresado = new wxTextCtrl( this, wxID_ANY, wxT(""), wxPoint( 1,1 ), wxSize( 250,25 ), wxTE_CENTRE );
+	bSizer11->Add( Login_Contrasenia_ingresado, 0, wxALL, 5 );
+	
+	
+	bSizer8->Add( bSizer11, 1, wxEXPAND, 5 );
+	
+	B_Agregar = new wxButton( this, wxID_ANY, wxT("Ingresar"), wxDefaultPosition, wxDefaultSize, 0 );
+	B_Agregar->SetMinSize( wxSize( 250,30 ) );
+	
+	bSizer8->Add( B_Agregar, 0, wxALL, 5 );
+	
+	
+	this->SetSizer( bSizer8 );
+	this->Layout();
+	
+	this->Centre( wxBOTH );
+	
+	// Connect Events
+	B_Agregar->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Agregar_Usuario::Agregar ), NULL, this );
+}
+
+Agregar_Usuario::~Agregar_Usuario()
+{
+	// Disconnect Events
+	B_Agregar->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Agregar_Usuario::Agregar ), NULL, this );
+	
+}
+void Agregar_Usuario::Agregar(wxCommandEvent& event){
+	
+	
+	
+	
+	
+	
+	Main_GUI* mainWindow = new Main_GUI(NULL);
+	mainWindow->Show();
+	this->Close();
 }

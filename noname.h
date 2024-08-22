@@ -34,8 +34,8 @@ protected:
 	wxStaticText* m_staticText11;
 	wxButton* B_Ingresar;
 	
-	// Virtual event handlers, override them in your derived class
-	virtual void Check(wxCommandEvent& event);  // Declaración corregida de Check
+	// Virtual event handlers
+	virtual void Check(wxCommandEvent& event);  
 	
 public:
 	
@@ -62,11 +62,35 @@ protected:
 	wxButton* b_AgregarUser;
 	wxListBox* m_listBox1;
 	
+	virtual void Registrar(wxCommandEvent& event);  
 public:
 	
 	Main_GUI( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 503,672 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
 	
 	~Main_GUI();
+};
+
+class Agregar_Usuario : public wxFrame 
+{
+private:
+	wxTextCtrl* Login_Usuario_ingresado;
+	wxTextCtrl* Login_Contrasenia_ingresado;
+	
+protected:
+	wxStaticText* m_staticText1;
+	wxStaticText* m_staticText11;
+	wxButton* B_Agregar;
+	
+	// Virtual event handlers, overide them in your derived class
+	virtual void Agregar( wxCommandEvent& event );
+	
+	
+public:
+
+	Agregar_Usuario( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Agregar Usuario"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 500,300 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
+
+	~Agregar_Usuario();
+	
 };
 
 #endif //__NONAME_H__
