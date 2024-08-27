@@ -33,8 +33,8 @@ private:
 	
 protected:
 	//declaracion de cajas de texto estatico
-	wxStaticText* m_staticText1;
-	wxStaticText* m_staticText11;
+	wxStaticText* Label_Estatica_Usuario;
+	wxStaticText* Label_Estatica_Contrasenia;
 	wxButton* B_Ingresar;
 	
 	// Virtual event handlers
@@ -64,7 +64,7 @@ protected:
 	wxButton* b_modificar;
 	wxButton* b_borrar;
 	wxButton* b_AgregarUser;
-	wxListBox* m_listBox1;
+	wxListBox* Libros_listBox;
 	
 	virtual void Registrar(wxCommandEvent& event);  
 public:
@@ -78,12 +78,14 @@ class Agregar_Usuario : public wxFrame
 {
 private:
 	//declaracion de cajas de texto para extraer datos
-	wxTextCtrl* Login_Usuario_ingresado;
-	wxTextCtrl* Login_Contrasenia_ingresado;
+	wxTextCtrl* Agregar_Usuario_Ingresado;
+	wxTextCtrl* Agregar_Contrasenia_Ingresado;
+	wxTextCtrl* Agregar_Role_Ingresado;
 	
 protected:
-	wxStaticText* m_staticText1;
-	wxStaticText* m_staticText11;
+	wxStaticText* Label_Estatica_Agregar_Usuario;
+	wxStaticText* Label_Estatica_Agregar_Contrasenia;
+	wxStaticText* Label_Estatica_Agregar_Role;
 	wxButton* B_Agregar;
 	
 	// Virtual event handlers
