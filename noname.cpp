@@ -188,9 +188,6 @@ Agregar_Usuario::Agregar_Usuario( wxWindow* parent, wxWindowID id, const wxStrin
 	wxBoxSizer* Grilla_Exterior_Agregar;
 	Grilla_Exterior_Agregar = new wxBoxSizer( wxVERTICAL );
 	
-	wxBoxSizer* Grilla_Interior_Agregar;
-	Grilla_Exterior_Agregar = new wxBoxSizer( wxVERTICAL );
-	
 	Label_Estatica_Agregar_Usuario = new wxStaticText( this, wxID_ANY, wxT("Ingrese Su Usuario"), wxPoint( 0,0 ), wxSize( 250,20 ), wxALIGN_CENTRE );
 	Label_Estatica_Agregar_Usuario->Wrap( 250 );
 	Grilla_Exterior_Agregar->Add( Label_Estatica_Agregar_Usuario, 0, wxALL, 5 );
@@ -198,32 +195,35 @@ Agregar_Usuario::Agregar_Usuario( wxWindow* parent, wxWindowID id, const wxStrin
 	Agregar_Usuario_Ingresado = new wxTextCtrl( this, wxID_ANY, wxT(""), wxPoint( 2,2 ), wxSize( 250,25 ), wxTE_CENTRE );
 	Grilla_Exterior_Agregar->Add( Agregar_Usuario_Ingresado, 0, wxALL, 5 );
 	
-	
-	
-	wxBoxSizer* bSizer11;
-	bSizer11 = new wxBoxSizer( wxVERTICAL );
-	
 	Label_Estatica_Agregar_Contrasenia = new wxStaticText( this, wxID_ANY, "Escriba La Contraseña", wxPoint( 0,2 ), wxSize( 250,20 ), wxALIGN_CENTRE );
 	Label_Estatica_Agregar_Contrasenia->Wrap( 250 );
-	bSizer11->Add( Label_Estatica_Agregar_Contrasenia, 0, wxALL, 5 );
+	Grilla_Exterior_Agregar->Add( Label_Estatica_Agregar_Contrasenia, 0, wxALL, 5 );
 	
 	Agregar_Contrasenia_Ingresado = new wxTextCtrl( this, wxID_ANY, wxT(""), wxPoint( 1,1 ), wxSize( 250,25 ), wxTE_CENTRE | wxTE_PASSWORD);
-	bSizer11->Add( Agregar_Contrasenia_Ingresado, 0, wxALL, 5 );
+	Grilla_Exterior_Agregar->Add( Agregar_Contrasenia_Ingresado, 0, wxALL, 5 );
 	
 	
-	Grilla_Exterior_Agregar->Add( bSizer11, 1, wxEXPAND, 5 );
-	
-	Label_Estatica_Agregar_Role = new wxStaticText( this, wxID_ANY, wxT("Ingrese SuEl Rol (User/Adm)"), wxPoint( 0,4 ), wxSize( 250,20 ), wxALIGN_CENTRE );
+	Label_Estatica_Agregar_Role = new wxStaticText( this, wxID_ANY, wxT("Ingrese El Rol (User/Adm)"), wxPoint( 0,2 ), wxSize( 250,20 ), wxALIGN_CENTRE );
 	Label_Estatica_Agregar_Role->Wrap( 250 );
 	Grilla_Exterior_Agregar->Add( Label_Estatica_Agregar_Role, 0, wxALL, 5 );
 	
-	Agregar_Role_Ingresado = new wxTextCtrl( this, wxID_ANY, wxT(""), wxPoint( 2,2 ), wxSize( 250,25 ), wxTE_CENTRE );
+	Agregar_Role_Ingresado = new wxTextCtrl( this, wxID_ANY, wxT(""), wxPoint( 1,1 ), wxSize( 250,25 ), wxTE_CENTRE );
 	Grilla_Exterior_Agregar->Add( Agregar_Role_Ingresado, 0, wxALL, 5 );
+	
+	wxBoxSizer* Grilla_Interior_Botones_Agregar;
+	Grilla_Interior_Botones_Agregar = new wxBoxSizer( wxHORIZONTAL );
 	
 	B_Agregar = new wxButton( this, wxID_ANY, wxT("Ingresar"), wxDefaultPosition, wxDefaultSize, 0 );
 	B_Agregar->SetMinSize( wxSize( 250,30 ) );
 	
-	Grilla_Exterior_Agregar->Add( B_Agregar, 0, wxALL, 5 );
+	B_Volver = new wxButton( this, wxID_ANY, wxT("Volver"), wxDefaultPosition, wxDefaultSize, 0 );
+	B_Volver->SetMinSize( wxSize( 250,30 ) );
+	
+	
+	Grilla_Interior_Botones_Agregar->Add( B_Agregar, 1, wxALL, 5 );
+	Grilla_Interior_Botones_Agregar->Add( B_Volver, 1, wxALL, 5 );
+	
+	Grilla_Exterior_Agregar->Add( Grilla_Interior_Botones_Agregar, 0, wxALL, 5 );
 	
 	
 	
@@ -235,12 +235,14 @@ Agregar_Usuario::Agregar_Usuario( wxWindow* parent, wxWindowID id, const wxStrin
 	
 	
 	B_Agregar->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Agregar_Usuario::Agregar ), NULL, this );
+	B_Volver->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Agregar_Usuario::Volver ), NULL, this );
 }
 
 Agregar_Usuario::~Agregar_Usuario()
 {
 	
 	B_Agregar->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Agregar_Usuario::Agregar ), NULL, this );
+	B_Volver->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Agregar_Usuario::Volver ), NULL, this );
 	
 }
 void Agregar_Usuario::Agregar(wxCommandEvent& event){
@@ -250,6 +252,12 @@ void Agregar_Usuario::Agregar(wxCommandEvent& event){
 	
 	
 	//cierra ventana y vuelve a main
+	Main_GUI* mainWindow = new Main_GUI(NULL);
+	mainWindow->Show();
+	this->Close();
+}
+void Agregar_Usuario::Volver(wxCommandEvent& event){
+	
 	Main_GUI* mainWindow = new Main_GUI(NULL);
 	mainWindow->Show();
 	this->Close();

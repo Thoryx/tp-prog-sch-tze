@@ -87,9 +87,11 @@ protected:
 	wxStaticText* Label_Estatica_Agregar_Contrasenia;
 	wxStaticText* Label_Estatica_Agregar_Role;
 	wxButton* B_Agregar;
+	wxButton* B_Volver;
 	
 	// Virtual event handlers
 	virtual void Agregar( wxCommandEvent& event );
+	virtual void Volver( wxCommandEvent& event );
 	
 	
 public:
