@@ -1,7 +1,7 @@
 #ifndef __NONAME_H__
 #define __NONAME_H__
 
-#include <wx/artprov.h>
+#include <wx/artprov.h> //configuracionesVentana
 #include <wx/xrc/xmlres.h>
 #include <wx/string.h>
 #include <wx/stattext.h>
@@ -14,10 +14,11 @@
 #include <wx/button.h>
 #include <wx/gbsizer.h>
 #include <wx/frame.h>
-#include <wx/listbox.h>
+#include <wx/listbox.h>//endconfiguracionesventana
+
 #include <wx/msgdlg.h>  // Para wxMessageBox
 
-///////////////////////////////////////////////////////////////////////////
+
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -26,10 +27,12 @@
 class Login_GUI : public wxFrame 
 {
 private:
+	//declaracion de cajas de texto para extraer datos
 	wxTextCtrl* Login_Usuario_ingresado;
 	wxTextCtrl* Login_Contrasenia_ingresado;
 	
 protected:
+	//declaracion de cajas de texto estatico
 	wxStaticText* m_staticText1;
 	wxStaticText* m_staticText11;
 	wxButton* B_Ingresar;
@@ -38,9 +41,9 @@ protected:
 	virtual void Check(wxCommandEvent& event);  
 	
 public:
-	
+	//Constructor
 	Login_GUI( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 800,600 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
-	
+	//destructor
 	~Login_GUI();
 };
 
@@ -52,6 +55,7 @@ class Main_GUI : public wxFrame
 private:
 	
 protected:
+	//declaracion de botones y listbox(a implementar)
 	wxButton* b_busqueda;
 	wxButton* b_detalles;
 	wxButton* b_agregar_fav;
@@ -64,15 +68,16 @@ protected:
 	
 	virtual void Registrar(wxCommandEvent& event);  
 public:
-	
+	//Constructor
 	Main_GUI( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 503,672 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
-	
+	//destructor
 	~Main_GUI();
 };
 
 class Agregar_Usuario : public wxFrame 
 {
 private:
+	//declaracion de cajas de texto para extraer datos
 	wxTextCtrl* Login_Usuario_ingresado;
 	wxTextCtrl* Login_Contrasenia_ingresado;
 	
@@ -81,14 +86,14 @@ protected:
 	wxStaticText* m_staticText11;
 	wxButton* B_Agregar;
 	
-	// Virtual event handlers, overide them in your derived class
+	// Virtual event handlers
 	virtual void Agregar( wxCommandEvent& event );
 	
 	
 public:
-
+	//Constructor
 	Agregar_Usuario( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Agregar Usuario"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 500,300 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
-
+	//destructor
 	~Agregar_Usuario();
 	
 };

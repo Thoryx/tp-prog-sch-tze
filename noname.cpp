@@ -1,20 +1,26 @@
-#include <vector>
-#include <iostream>
-#include <fstream>
+#include <vector> //manejo vectores
+//librerias de flujos de datos//
+#include <iostream>//
+#include <fstream>//
+/////////////////
 using namespace std;
+
+//Struct data para manejo de usuarios
 struct Usuario {
 	char Usuario[50];
 	char contrasena[50];
 	char rol[4];
 };
 
-#include "noname.h"
+#include "noname.h"//se incluye cabecera con las declaraciones de objetos y funciones
 
+//implementacion del constructor
 Login_GUI::Login_GUI(wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style)
 	: wxFrame(parent, id, title, pos, size, style)
 {
+	//Seteo de tamaños
 	this->SetSizeHints(wxDefaultSize, wxDefaultSize);
-	
+	//Configuraciones de labels y botones
 	wxGridBagSizer* gbSizer1 = new wxGridBagSizer(0, 0);
 	gbSizer1->SetFlexibleDirection(wxBOTH);
 	gbSizer1->SetNonFlexibleGrowMode(wxFLEX_GROWMODE_SPECIFIED);
@@ -51,13 +57,13 @@ Login_GUI::Login_GUI(wxWindow* parent, wxWindowID id, const wxString& title, con
 	
 	this->Centre(wxBOTH);
 	
-	// Connect Events
+	// Bindeo de funciones a botones
 	B_Ingresar->Connect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(Login_GUI::Check), NULL, this);
 }
 
 Login_GUI::~Login_GUI()
 {
-	// Disconnect Events
+	// desbindeo de funciones a botones
 	B_Ingresar->Disconnect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(Login_GUI::Check), NULL, this);
 }
 
@@ -69,12 +75,12 @@ void Login_GUI::Check(wxCommandEvent& event)
 	wxString contrasenia = Login_Contrasenia_ingresado->GetValue();
 	bool noencontrado = true;
 	
-	vector<Usuario> usuarios;
-	ifstream file("Credenciales.dat", std::ios::binary);
+	vector<Usuario> usuarios; //creacion de vector de struc usuario
+	ifstream file("Credenciales.dat", std::ios::binary);//se abre archivo en formato lectura y binario
 	if (file.is_open()) {
 		Usuario usuario;
 		while (file.read(reinterpret_cast<char*>(&usuario), sizeof(Usuario))) {
-			usuarios.push_back(usuario);
+			usuarios.push_back(usuario);//mientras la lectura sea posible se agrega al final del vector
 		}
 		file.close();
 	} else {
@@ -82,12 +88,12 @@ void Login_GUI::Check(wxCommandEvent& event)
 	}
 	
 	
-	for( vector<Usuario>::iterator it=usuarios.begin(); it!=usuarios.end(); ++it ) {  
-		if (usuario == it->Usuario && it->contrasena == contrasenia)
+	for( vector<Usuario>::iterator it=usuarios.begin(); it!=usuarios.end(); ++it ) { //se recorre el vetor de credencials 
+		if (usuario == it->Usuario && it->contrasena == contrasenia) //se compara a las ingresadas
 		{
 			noencontrado=false;
 			wxMessageBox("¡Ingreso exitoso!", "Login", wxOK | wxICON_INFORMATION);
-			// Aquí puedes crear y mostrar la ventana principal
+			//abre la ventana main
 			Main_GUI* mainWindow = new Main_GUI(NULL);
 			mainWindow->Show();
 			this->Close();  // Cierra la ventana de login
@@ -103,7 +109,7 @@ void Login_GUI::Check(wxCommandEvent& event)
 
 Main_GUI::Main_GUI(wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style)
 	: wxFrame(parent, id, title, pos, size, style)
-{
+{//Configuraciones de labels y botones
 	this->SetSizeHints(wxDefaultSize, wxDefaultSize);
 	wxFlexGridSizer* fgSizer2 = new wxFlexGridSizer(1, 1, 0, 0);
 	fgSizer2->SetFlexibleDirection(wxBOTH);
@@ -160,6 +166,7 @@ Main_GUI::Main_GUI(wxWindow* parent, wxWindowID id, const wxString& title, const
 	
 	this->Centre(wxBOTH);
 	
+	// Bindeo de funciones a botones
 	b_AgregarUser->Connect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(Main_GUI::Registrar), NULL, this);
 }
 
@@ -168,11 +175,13 @@ Main_GUI::~Main_GUI()
 	b_AgregarUser->Disconnect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(Main_GUI::Registrar), NULL, this);
 }
 void Main_GUI::Registrar(wxCommandEvent& event){
+	//abre Ventana Agregar usuario y cierra main
 	Agregar_Usuario* mainWindow = new Agregar_Usuario(NULL);
 	mainWindow->Show();
 	this->Close();
 }
 
+//implementacion ventana Agregar_Usuario
 Agregar_Usuario::Agregar_Usuario( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxFrame( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
@@ -214,26 +223,25 @@ Agregar_Usuario::Agregar_Usuario( wxWindow* parent, wxWindowID id, const wxStrin
 	
 	this->SetSizer( bSizer8 );
 	this->Layout();
-	
 	this->Centre( wxBOTH );
 	
-	// Connect Events
+	
 	B_Agregar->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Agregar_Usuario::Agregar ), NULL, this );
 }
 
 Agregar_Usuario::~Agregar_Usuario()
 {
-	// Disconnect Events
+	
 	B_Agregar->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( Agregar_Usuario::Agregar ), NULL, this );
 	
 }
 void Agregar_Usuario::Agregar(wxCommandEvent& event){
 	
 	
+	//a implementar
 	
 	
-	
-	
+	//cierra ventana y vuelve a main
 	Main_GUI* mainWindow = new Main_GUI(NULL);
 	mainWindow->Show();
 	this->Close();
