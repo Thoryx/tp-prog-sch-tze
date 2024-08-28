@@ -4,6 +4,9 @@
 #include <fstream>//
 /////////////////
 #include <iterator> //libreria para manejo de iteradores
+#include <cstring> // Para usar strcpy
+
+
 using namespace std;
 
 //Struct data para manejo de usuarios
@@ -248,7 +251,47 @@ Agregar_Usuario::~Agregar_Usuario()
 void Agregar_Usuario::Agregar(wxCommandEvent& event){
 	
 	
-	//a implementar
+	wxString usuario = Agregar_Usuario_Ingresado->GetValue();
+	wxString contrasenia = Agregar_Contrasenia_Ingresado->GetValue();
+	wxString rol = Agregar_Role_Ingresado->GetValue();
+	
+	
+
+	vector<Usuario> Usuarios;
+	string filename = "Credenciales.dat";
+	
+	// Abrir y cargar usuarios existentes desde el archivo binario
+	ifstream fileIn(filename, std::ios::binary);
+	
+	if (fileIn.is_open()) {
+		Usuario tempUser;
+		while (fileIn.read(reinterpret_cast<char*>(&tempUser), sizeof(Usuario))) {
+			Usuarios.push_back(tempUser);
+		}
+		fileIn.close();
+	}
+	
+	// Crear un nuevo usuario con los datos proporcionados
+	Usuario nuevoUsuario;
+	strcpy(nuevoUsuario.Usuario, usuario.mb_str());
+	strcpy(nuevoUsuario.contrasena, contrasenia.mb_str());
+	strcpy(nuevoUsuario.rol, rol.mb_str());
+	
+	// Agregar el nuevo usuario al vector
+	Usuarios.push_back(nuevoUsuario);
+	
+	// Guardar todos los usuarios en el archivo binario
+	ofstream fileOut(filename, std::ios::binary | std::ios::trunc);
+	
+	if (fileOut.is_open()) {
+		for (const auto& user : Usuarios) {
+			fileOut.write(reinterpret_cast<const char*>(&user), sizeof(Usuario));
+		}
+		fileOut.close();
+	}
+
+	
+	
 	
 	
 	//cierra ventana y vuelve a main
