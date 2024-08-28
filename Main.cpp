@@ -10,7 +10,7 @@ class MyApp : public wxApp {
 public:
 	virtual bool OnInit() {
 		//se crea puntero de tipo frame al loguin
-		wxFrame *frame = new Agregar_Usuario(nullptr);
+		wxFrame *frame = new Login_GUI(nullptr);
 		//se muestra el frame apuntado
 		frame->Show(true);
 		
