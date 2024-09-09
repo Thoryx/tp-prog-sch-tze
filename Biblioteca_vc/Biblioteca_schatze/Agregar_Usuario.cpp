@@ -130,13 +130,13 @@ void Agregar_Usuario::Agregar(wxCommandEvent& event) {
 
 
 	//cierra ventana y vuelve a main
-	Main_GUI* mainWindow = new Main_GUI(NULL);
+	/*Main_GUI* mainWindow = new Main_GUI(NULL);
 	mainWindow->Show();
-	this->Close();
+	this->Close();*/
 }
 void Agregar_Usuario::Volver(wxCommandEvent& event) {
 
-	Main_GUI* mainWindow = new Main_GUI(NULL);
+	/*Main_GUI* mainWindow = new Main_GUI(NULL);
 	mainWindow->Show();
-	this->Close();
+	this->Close();*/
 }

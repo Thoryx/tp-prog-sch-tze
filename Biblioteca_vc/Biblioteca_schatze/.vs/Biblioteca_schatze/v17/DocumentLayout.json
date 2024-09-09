@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BC4B6C26-4876-4DA4-9302-A876D715ACED}|Biblioteca_schatze.vcxproj|C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Loguin_GUI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BC4B6C26-4876-4DA4-9302-A876D715ACED}|Biblioteca_schatze.vcxproj|solutionrelative:Loguin_GUI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BC4B6C26-4876-4DA4-9302-A876D715ACED}|Biblioteca_schatze.vcxproj|C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Loguin_GUI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BC4B6C26-4876-4DA4-9302-A876D715ACED}|Biblioteca_schatze.vcxproj|solutionrelative:Loguin_GUI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -15,8 +19,8 @@
       "RelativeMoniker": "D:0:0:{BC4B6C26-4876-4DA4-9302-A876D715ACED}|Biblioteca_schatze.vcxproj|solutionrelative:Main_GUI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BC4B6C26-4876-4DA4-9302-A876D715ACED}|Biblioteca_schatze.vcxproj|C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Loguin_GUI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BC4B6C26-4876-4DA4-9302-A876D715ACED}|Biblioteca_schatze.vcxproj|solutionrelative:Loguin_GUI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BC4B6C26-4876-4DA4-9302-A876D715ACED}|Biblioteca_schatze.vcxproj|C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Agregar_Usuario.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BC4B6C26-4876-4DA4-9302-A876D715ACED}|Biblioteca_schatze.vcxproj|solutionrelative:Agregar_Usuario.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BC4B6C26-4876-4DA4-9302-A876D715ACED}|Biblioteca_schatze.vcxproj|C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -25,6 +29,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{BC4B6C26-4876-4DA4-9302-A876D715ACED}|Biblioteca_schatze.vcxproj|C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BC4B6C26-4876-4DA4-9302-A876D715ACED}|Biblioteca_schatze.vcxproj|solutionrelative:Main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC4B6C26-4876-4DA4-9302-A876D715ACED}|Biblioteca_schatze.vcxproj|C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Agregar_Usuario.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BC4B6C26-4876-4DA4-9302-A876D715ACED}|Biblioteca_schatze.vcxproj|solutionrelative:Agregar_Usuario.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,80 +46,103 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Main.h",
               "DocumentMoniker": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Main.h",
               "RelativeDocumentMoniker": "Main.h",
               "ToolTip": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Main.h",
               "RelativeToolTip": "Main.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-02T20:11:09.971Z",
-              "IsPinned": true
+              "WhenOpened": "2024-09-09T01:27:17.341Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Main_GUI.h",
-              "DocumentMoniker": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Main_GUI.h",
-              "RelativeDocumentMoniker": "Main_GUI.h",
-              "ToolTip": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Main_GUI.h",
-              "RelativeToolTip": "Main_GUI.h",
-              "ViewState": "AgIAABcAAAAAAAAAAAAowCgAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-02T20:11:24.256Z",
+              "DocumentIndex": 4,
+              "Title": "Agregar_Usuario.cpp",
+              "DocumentMoniker": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Agregar_Usuario.cpp",
+              "RelativeDocumentMoniker": "Agregar_Usuario.cpp",
+              "ToolTip": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Agregar_Usuario.cpp",
+              "RelativeToolTip": "Agregar_Usuario.cpp",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAuwIoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-09T01:25:04.543Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
+              "Title": "Agregar_Usuario.h",
+              "DocumentMoniker": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Agregar_Usuario.h",
+              "RelativeDocumentMoniker": "Agregar_Usuario.h",
+              "ToolTip": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Agregar_Usuario.h",
+              "RelativeToolTip": "Agregar_Usuario.h",
+              "ViewState": "AgIAABAAAAAAAAAAAAAwwBoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-05T21:53:31.847Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Main.cpp",
+              "DocumentMoniker": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Main.cpp",
+              "RelativeDocumentMoniker": "Main.cpp",
+              "ToolTip": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Main.cpp",
+              "RelativeToolTip": "Main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-09T01:21:03.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Loguin_GUI.h",
+              "DocumentMoniker": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Loguin_GUI.h",
+              "RelativeDocumentMoniker": "Loguin_GUI.h",
+              "ToolTip": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Loguin_GUI.h",
+              "RelativeToolTip": "Loguin_GUI.h",
+              "ViewState": "AgIAABsAAAAAAAAAAAAuwC0AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-02T00:09:45.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Loguin_GUI.cpp",
               "DocumentMoniker": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Loguin_GUI.cpp",
               "RelativeDocumentMoniker": "Loguin_GUI.cpp",
               "ToolTip": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Loguin_GUI.cpp",
               "RelativeToolTip": "Loguin_GUI.cpp",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAGIAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAcwJMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-02T20:10:57.798Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Main.cpp",
-              "DocumentMoniker": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Main.cpp",
-              "RelativeDocumentMoniker": "Main.cpp",
-              "ToolTip": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Main.cpp",
-              "RelativeToolTip": "Main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-02T00:18:14.688Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Main_GUI.cpp",
               "DocumentMoniker": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Main_GUI.cpp",
               "RelativeDocumentMoniker": "Main_GUI.cpp",
-              "ToolTip": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Main_GUI.cpp*",
-              "RelativeToolTip": "Main_GUI.cpp*",
-              "ViewState": "AgIAADcAAAAAAAAAAAAcwEoAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Main_GUI.cpp",
+              "RelativeToolTip": "Main_GUI.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-02T00:13:30.281Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Loguin_GUI.h",
-              "DocumentMoniker": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Loguin_GUI.h",
-              "RelativeDocumentMoniker": "Loguin_GUI.h",
-              "ToolTip": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Loguin_GUI.h*",
-              "RelativeToolTip": "Loguin_GUI.h*",
-              "ViewState": "AgIAABUAAAAAAAAAAAAowC4AAADjAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Main_GUI.h",
+              "DocumentMoniker": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Main_GUI.h",
+              "RelativeDocumentMoniker": "Main_GUI.h",
+              "ToolTip": "C:\\Users\\engle\\OneDrive\\DS Itec\\2do A\u00F1o\\Codes\\TP_Final_P1\\sch\u00E4tze\\Biblioteca\\Biblioteca_vc\\Biblioteca_schatze\\Main_GUI.h",
+              "RelativeToolTip": "Main_GUI.h",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwCEAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-02T00:09:45.89Z",
+              "WhenOpened": "2024-09-09T01:41:31.725Z",
               "EditorCaption": ""
             }
           ]

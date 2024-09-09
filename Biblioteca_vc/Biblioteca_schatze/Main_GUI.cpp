@@ -1,88 +1,88 @@
 
 #include "Main_GUI.h"
-#include "Agregar_Usuario.h"
-#include "Loguin_GUI.h"
 
+//auto id para gestionar eventos
+enum {
+    ID_ViewBookDetails = 1,
+    ID_SearchBook,
+    ID_AddToFavorites,
+    ID_ViewFavorites,
+    ID_ManageBooks,
+    ID_ManageUsers
+};
 
-using namespace std;
+wxBEGIN_EVENT_TABLE(Main_GUI, wxFrame)
+EVT_BUTTON(ID_ViewBookDetails, Main_GUI::OnViewBookDetails)
+EVT_BUTTON(ID_SearchBook, Main_GUI::OnSearchBook)
+EVT_BUTTON(ID_AddToFavorites, Main_GUI::OnAddToFavorites)
+EVT_BUTTON(ID_ViewFavorites, Main_GUI::OnViewFavorites)
+EVT_BUTTON(ID_ManageBooks, Main_GUI::OnManageBooks)
+EVT_BUTTON(ID_ManageUsers, Main_GUI::OnManageUsers)
+wxEND_EVENT_TABLE()
 
-// Implementación de Main_GUI
+Main_GUI::Main_GUI(const wxString& title, bool isAdmin)
+    : wxFrame(nullptr, wxID_ANY, title, wxDefaultPosition, wxSize(400, 300)),
+    userIsAdmin(isAdmin) {
 
-Main_GUI::Main_GUI(wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style) :wxFrame(parent, id, title, pos, size, style)
-{//Configuraciones de labels y botones
-	this->SetSizeHints(wxDefaultSize, wxDefaultSize);
-	wxFlexGridSizer* Grilla_Exterior_Main = new wxFlexGridSizer(1, 1, 0, 0);
-	Grilla_Exterior_Main->SetFlexibleDirection(wxBOTH);
-	Grilla_Exterior_Main->SetNonFlexibleGrowMode(wxFLEX_GROWMODE_SPECIFIED);
+    wxPanel* panel = new wxPanel(this, wxID_ANY);
 
-	wxBoxSizer* Grilla_Interior_Gral = new wxBoxSizer(wxVERTICAL);
+    SetBackgroundColour(wxColour(242, 230, 214));
+    // Establecer el ícono de la ventana
+    wxIcon icon;
+    icon.LoadFile("Icono.ico", wxBITMAP_TYPE_ICO);
+    SetIcon(icon);
 
-	wxBoxSizer* Grilla_Interior_Linea1 = new wxBoxSizer(wxHORIZONTAL);
+    // Sizer principal para la disposición vertical de los botones
+    wxBoxSizer* vbox = new wxBoxSizer(wxVERTICAL);
 
-	b_busqueda = new wxButton(this, wxID_ANY, ("Buscar Libro"), wxDefaultPosition, wxDefaultSize, 0);
-	Grilla_Interior_Linea1->Add(b_busqueda, 0, wxALL, 5);
+    // Botones para todos los usuarios
+    viewBookDetailsBtn = new wxButton(panel, ID_ViewBookDetails, wxT("Ver detalles del libro"));
+    searchBookBtn = new wxButton(panel, ID_SearchBook, wxT("Buscar un libro"));
+    addToFavoritesBtn = new wxButton(panel, ID_AddToFavorites, wxT("Agregar a favoritos"));
+    viewFavoritesBtn = new wxButton(panel, ID_ViewFavorites, wxT("Ver lista de favoritos"));
 
-	b_detalles = new wxButton(this, wxID_ANY, ("Ver Detalles"), wxDefaultPosition, wxDefaultSize, 0);
-	Grilla_Interior_Linea1->Add(b_detalles, 0, wxALL, 5);
+    // Añadir los botones al sizer
+    vbox->Add(viewBookDetailsBtn, 0, wxALL | wxEXPAND, 10);
+    vbox->Add(searchBookBtn, 0, wxALL | wxEXPAND, 10);
+    vbox->Add(addToFavoritesBtn, 0, wxALL | wxEXPAND, 10);
+    vbox->Add(viewFavoritesBtn, 0, wxALL | wxEXPAND, 10);
 
-	b_agregar_fav = new wxButton(this, wxID_ANY, ("Añadir a Favoritos"), wxDefaultPosition, wxDefaultSize, 0);
-	Grilla_Interior_Linea1->Add(b_agregar_fav, 0, wxALL, 5);
+    // Si el usuario es administrador, agregamos los botones de gestión
+    if (userIsAdmin) {
+        manageBooksBtn = new wxButton(panel, ID_ManageBooks, wxT("Gestionar libros"));
+        manageUsersBtn = new wxButton(panel, ID_ManageUsers, wxT("Gestionar usuarios"));
 
+        vbox->Add(manageBooksBtn, 0, wxALL | wxEXPAND, 10);
+        vbox->Add(manageUsersBtn, 0, wxALL | wxEXPAND, 10);
+    }
 
-	Grilla_Interior_Gral->Add(Grilla_Interior_Linea1, 1, wxEXPAND, 5);
+    // Establecer el sizer al panel
+    panel->SetSizer(vbox);
 
-	wxBoxSizer* Grilla_Interior_Linea2 = new wxBoxSizer(wxHORIZONTAL);
-
-	b_aniadir = new wxButton(this, wxID_ANY, ("Añadir Libro"), wxDefaultPosition, wxDefaultSize, 0);
-	Grilla_Interior_Linea2->Add(b_aniadir, 0, wxALL, 5);
-	
-	b_modificar = new wxButton(this, wxID_ANY, ("Modificar Libro"), wxDefaultPosition, wxDefaultSize, 0);
-	Grilla_Interior_Linea2->Add(b_modificar, 0, wxALL, 5);
-
-	b_borrar = new wxButton(this, wxID_ANY, ("Borrar Libro"), wxDefaultPosition, wxDefaultSize, 0);
-	Grilla_Interior_Linea2->Add(b_borrar, 0, wxALL, 5);
-
-	b_AgregarUser = new wxButton(this, wxID_ANY, wxT("Registrar Usuario"), wxDefaultPosition, wxDefaultSize, 0);
-	Grilla_Interior_Linea2->Add(b_AgregarUser, 0, wxALL, 5);
-
-	Grilla_Interior_Gral->Add(Grilla_Interior_Linea2, 1, wxEXPAND, 5);
-
-	wxBoxSizer* Grilla_Interior_Linea3 = new wxBoxSizer(wxVERTICAL);
-	b_fav = new wxButton(this, wxID_ANY, ("Ver Lista de Favoritos"), wxPoint(-1, -1), wxDefaultSize, wxBU_EXACTFIT);
-	Grilla_Interior_Linea3->Add(b_fav, 0, wxALL, 5);
-
-	Grilla_Interior_Gral->Add(Grilla_Interior_Linea3, 1, wxEXPAND, 5);
-
-	Libros_listBox = new wxListBox(this, wxID_ANY, wxDefaultPosition, wxSize(500, 500), 0, NULL, 0);
-	Grilla_Interior_Gral->Add(Libros_listBox, 0, wxALL, 5);
-
-	Grilla_Exterior_Main->Add(Grilla_Interior_Gral, 1, wxEXPAND, 5);
-
-	this->SetSizer(Grilla_Exterior_Main);
-	this->Layout();
-
-	this->Centre(wxBOTH);
-
-	// Bindeo de funciones a botones
-	b_AgregarUser->Connect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(Main_GUI::Registrar), NULL, this);
-	if (!(esAdmin)) {
-
-		b_aniadir->Show(false);
-		b_modificar->Show(false);
-		b_borrar->Show(false);
-		b_AgregarUser->Show(false);
-
-
-	}
+    // Centrar la ventana en pantalla
+    Centre();
 }
 
-Main_GUI::~Main_GUI()
-{
-	b_AgregarUser->Disconnect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(Main_GUI::Registrar), NULL, this);
+void Main_GUI::OnViewBookDetails(wxCommandEvent& event) {
+    //En Progreso
 }
-void Main_GUI::Registrar(wxCommandEvent& event) {
-	//abre Ventana Agregar usuario y cierra main
-	Agregar_Usuario* mainWindow = new Agregar_Usuario(NULL);
-	mainWindow->Show();
-	this->Close();
+
+void Main_GUI::OnSearchBook(wxCommandEvent& event) {
+    //En Progreso
+}
+
+void Main_GUI::OnAddToFavorites(wxCommandEvent& event) {
+    //En Progreso
+}
+
+void Main_GUI::OnViewFavorites(wxCommandEvent& event) {
+    //En Progreso
+}
+
+void Main_GUI::OnManageBooks(wxCommandEvent& event) {
+    //En Progreso
+}
+
+void Main_GUI::OnManageUsers(wxCommandEvent& event) {
+    //En Progreso
 }

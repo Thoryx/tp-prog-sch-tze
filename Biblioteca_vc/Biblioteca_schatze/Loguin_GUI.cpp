@@ -1,109 +1,176 @@
-#include <vector> //manejo vectores
-//librerias de flujos de datos//
-#include <iostream>//
-#include <fstream>//
-#include "Loguin_GUI.h"//se incluye cabecera con las declaraciones de objetos y funciones
+#include "Loguin_GUI.h"
 #include "Main_GUI.h"
+#include <fstream>
+#include <wx/icon.h>
+#include <wx/bitmap.h>
+#include <wx/sizer.h>  // Para gestionar el layout
 
-using namespace std;
-
-//Struct data para manejo de usuarios
-struct Usuario {
-	char Usuario[50];
-	char contrasena[50];
-	char rol[4];
+//auto id para gestionar eventos
+enum {
+    ID_Login = 1,
+    ID_Register
 };
 
+wxBEGIN_EVENT_TABLE(Loguin_GUI, wxFrame)
+EVT_BUTTON(ID_Login, Loguin_GUI::OnLogin)
+EVT_BUTTON(ID_Register, Loguin_GUI::OnRegister)
+wxEND_EVENT_TABLE()
 
-//implementacion del constructor
-Login_GUI::Login_GUI(wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style)
-	: wxFrame(parent, id, title, pos, size, style)
-{
-	//Seteo de tamaños
-	this->SetSizeHints(wxDefaultSize, wxDefaultSize);
-	//Configuraciones de labels y botones
-	wxGridBagSizer* Grilla_Exterior_Loguin = new wxGridBagSizer(0, 0);
-	Grilla_Exterior_Loguin->SetFlexibleDirection(wxBOTH);
-	Grilla_Exterior_Loguin->SetNonFlexibleGrowMode(wxFLEX_GROWMODE_SPECIFIED);
+Loguin_GUI::Loguin_GUI(const wxString& title)
+    : wxFrame(nullptr, wxID_ANY, title, wxDefaultPosition, wxSize(600, 350)) {
 
-	wxBoxSizer* Grilla_Interior_Usuario = new wxBoxSizer(wxVERTICAL);
+    wxPanel* panel = new wxPanel(this, wxID_ANY);
+    SetBackgroundColour(wxColour(242, 230, 214));
+    // Establecer el ícono de la ventana
+    wxIcon icon;
+    icon.LoadFile("Icono.ico", wxBITMAP_TYPE_ICO);
+    SetIcon(icon);
 
-	Label_Estatica_Usuario = new wxStaticText(this, wxID_ANY, ("Ingrese Su Usuario"), wxPoint(0, 0), wxSize(250, 20), wxALIGN_CENTRE);
-	Label_Estatica_Usuario->Wrap(250);
-	Grilla_Interior_Usuario->Add(Label_Estatica_Usuario, 0, wxALL, 5);
+    // Sizer principal para organizar elementos
+    wxBoxSizer* vbox = new wxBoxSizer(wxVERTICAL);
 
-	Login_Usuario_ingresado = new wxTextCtrl(this, wxID_ANY, (""), wxPoint(2, 2), wxSize(250, 25), wxTE_CENTRE);
-	Grilla_Interior_Usuario->Add(Login_Usuario_ingresado, 0, wxALL, 5);
+    // Cargar la imagen original y escalarla
+    wxImage image(wxT("Logo2-removebg-preview.png"), wxBITMAP_TYPE_PNG);
 
-	Grilla_Exterior_Loguin->Add(Grilla_Interior_Usuario, wxGBPosition(7, 30), wxGBSpan(1, 1), wxEXPAND, 5);
+    // Ajustar el tamaño de la imagen 
+    image = image.Scale(100, 100);
 
-	wxBoxSizer* Grilla_Interior_Contrasenia = new wxBoxSizer(wxVERTICAL);
+    // Convertir la imagen escalada a wxBitmap
+    wxBitmap bitmap(image);
 
-	Label_Estatica_Contrasenia = new wxStaticText(this, wxID_ANY, "Escriba La Contraseña", wxPoint(0, 2), wxSize(250, 20), wxALIGN_CENTRE);
-	Label_Estatica_Contrasenia->Wrap(250);
-	Grilla_Interior_Contrasenia->Add(Label_Estatica_Contrasenia, 0, wxALL, 5);
+    // Agregar la imagen escalada al panel
+    wxStaticBitmap* img = new wxStaticBitmap(panel, wxID_ANY, bitmap);
+    vbox->Add(img, 0, wxALIGN_CENTER | wxTOP, 10);
 
-	Login_Contrasenia_ingresado = new wxTextCtrl(this, wxID_ANY, (""), wxPoint(1, 1), wxSize(250, 25), wxTE_CENTRE | wxTE_PASSWORD);
-	Grilla_Interior_Contrasenia->Add(Login_Contrasenia_ingresado, 0, wxALL, 5);
+    // Caja de texto para el nombre de usuario
+    wxBoxSizer* hbox1 = new wxBoxSizer(wxHORIZONTAL);
+    wxStaticText* userLabel = new wxStaticText(panel, wxID_ANY, wxT("Usuario:"));
+    userTextCtrl = new wxTextCtrl(panel, wxID_ANY);
+    hbox1->Add(userLabel, 0, wxRIGHT, 8);
+    hbox1->Add(userTextCtrl, 1);
 
-	Grilla_Exterior_Loguin->Add(Grilla_Interior_Contrasenia, wxGBPosition(11, 30), wxGBSpan(1, 1), wxEXPAND, 5);
+    vbox->Add(hbox1, 0, wxEXPAND | wxLEFT | wxRIGHT | wxTOP, 10);
 
-	B_Ingresar = new wxButton(this, wxID_ANY, ("Ingresar"), wxDefaultPosition, wxDefaultSize, 0);
-	B_Ingresar->SetMinSize(wxSize(250, 30));
+    // Caja de texto para la contraseña
+    wxBoxSizer* hbox2 = new wxBoxSizer(wxHORIZONTAL);
+    wxStaticText* passLabel = new wxStaticText(panel, wxID_ANY, wxT("Contraseña:"));
+    passTextCtrl = new wxTextCtrl(panel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_PASSWORD);
+    hbox2->Add(passLabel, 0, wxRIGHT, 8);
+    hbox2->Add(passTextCtrl, 1);
 
-	Grilla_Exterior_Loguin->Add(B_Ingresar, wxGBPosition(15, 30), wxGBSpan(1, 1), wxALL, 5);
+    vbox->Add(hbox2, 0, wxEXPAND | wxLEFT | wxRIGHT | wxTOP, 10);
 
-	this->SetSizer(Grilla_Exterior_Loguin);
-	this->Layout();
+    // Botones de login y registro
+    wxBoxSizer* hbox3 = new wxBoxSizer(wxHORIZONTAL);
+    loginButton = new wxButton(panel, ID_Login, wxT("Iniciar Sesión"));
+    registerButton = new wxButton(panel, ID_Register, wxT("Registrarse"));
+    hbox3->Add(loginButton, 0, wxRIGHT, 5);
+    hbox3->Add(registerButton, 0, wxLEFT, 5);
 
-	this->Centre(wxBOTH);
+    vbox->Add(hbox3, 0, wxALIGN_CENTER | wxTOP, 20);
 
-	// Bindeo de funciones a botones
-	B_Ingresar -> Connect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(Login_GUI::Check), NULL, this);
+    // Texto de estado para mostrar mensajes
+    statusText = new wxStaticText(panel, wxID_ANY, wxT(""), wxDefaultPosition, wxSize(250, 25));
+    vbox->Add(statusText, 0, wxALIGN_CENTER | wxTOP, 10);
+
+    // Aplicar el Sizer al panel
+    panel->SetSizer(vbox);
+
+    // Centrar la ventana
+    Centre();
+
 }
 
-Login_GUI::~Login_GUI()
-{
-	// desbindeo de funciones a botones
-	B_Ingresar->Disconnect(wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(Login_GUI::Check), NULL, this);
+void Loguin_GUI::OnLogin(wxCommandEvent& event) {
+    std::string username = userTextCtrl->GetValue().ToStdString();
+    std::string password = passTextCtrl->GetValue().ToStdString();
+    if (Authenticate(username, password)) {
+        statusText->SetLabel("¡Inicio de sesión exitoso!");
+        wxFrame* mainWindow = new Main_GUI("Home", currentUser.isAdmin);
+        mainWindow->Show();
+        this->Close();
+    }
+    
+    else {
+        statusText->SetLabel("Credenciales incorrectas.");
+    }
 }
 
-void Login_GUI::Check(wxCommandEvent& event)
-{
+// funcion para evitar el uso de espacios
+bool Loguin_GUI::ContainsSpaces(const std::string& str) {
+    return std::find_if(str.begin(), str.end(), ::isspace) != str.end();
+}
+void Loguin_GUI::OnRegister(wxCommandEvent& event) {
+    std::string username = userTextCtrl->GetValue().ToStdString();
+    std::string password = passTextCtrl->GetValue().ToStdString();
 
-	// Obtener los valores ingresados por el usuario
-	wxString usuario = Login_Usuario_ingresado->GetValue();
-	wxString contrasenia = Login_Contrasenia_ingresado->GetValue();
-	bool noencontrado = true;
+    // Verificar si los campos están vacíos o contienen espacios
+    if (username.empty() || ContainsSpaces(username) || password.empty() || ContainsSpaces(password)) {
+        statusText->SetLabel("Nombre de usuario y contraseña no pueden estar vacíos ni contener espacios.");
+        return;
+    }
 
-	vector<Usuario> usuarios; //creacion de vector de struc usuario
-	ifstream file("Credenciales.dat", std::ios::binary);//se abre archivo en formato lectura y binario
-	if (file.is_open()) {
-		Usuario usuario;
-		while (file.read(reinterpret_cast<char*>(&usuario), sizeof(Usuario))) {
-			usuarios.push_back(usuario);//mientras la lectura sea posible se agrega al final del vector
-		}
-		file.close();
-	}
-	else {
-		cerr << "Error al abrir el archivo para lectura.";
-	}
+    // Verificar la longitud de los campos
+    if (username.length() > 20) {
+        statusText->SetLabel("Nombre de usuario demasiado largo (máx. 20 caracteres).");
+        return;
+    }
+    if (password.length() > 8) {
+        statusText->SetLabel("Contraseña demasiado larga (máx. 8 caracteres).");
+        return;
+    }
+
+    User newUser;
+    strncpy(newUser.username, username.c_str(), sizeof(newUser.username));
+    strncpy(newUser.password, password.c_str(), sizeof(newUser.password));
+    newUser.isAdmin = false;  // Aquí aseguramos explícitamente que no sea admin
+
+    if (SaveUser(newUser)) {
+        statusText->SetLabel("¡Usuario registrado con éxito!");
+    }
+    else {
+        statusText->SetLabel("Error al registrar usuario.");
+    }
+}
+
+bool Loguin_GUI::Authenticate(const std::string& username, const std::string& password) {
+    std::vector<User> users = LoadUsers();
+    for (const auto& user : users) {
+        if (username == user.username && password == user.password) {
+            currentUser = user;  // Asigna el usuario autenticado
+            return true;
+        }
+    }
+    return false;
+}
 
 
-	for (vector<Usuario>::iterator it = usuarios.begin(); it != usuarios.end(); ++it) { //se recorre el vector de credencials 
-		if(usuario == it->Usuario && it->contrasena == contrasenia) //se comparan las credenciales
-		{
-			noencontrado = false;
-			wxMessageBox("¡Ingreso exitoso!", "Login", wxOK | wxICON_INFORMATION);
-			//abre la ventana main
-			esAdmin = true;
-			Main_GUI* mainWindow = new Main_GUI(NULL);
-			mainWindow->Show();
-			this->Close();  // Cierra la ventana de login
-		}
-	}
-	if (noencontrado)
-	{
-		wxMessageBox("Usuario o contraseña incorrectos", "Error", wxOK | wxICON_ERROR);
-	}
+
+bool Loguin_GUI::SaveUser(const User& user) {
+    std::ofstream file("users.dat", std::ios::app | std::ios::binary);
+    if (!file) {
+        statusText->SetLabel("Error al abrir el archivo para guardar.");
+        return false;
+    }
+
+    file.write(reinterpret_cast<const char*>(&user), sizeof(User));
+    file.close();
+
+    return true;
+}
+
+
+std::vector<User> Loguin_GUI::LoadUsers() {
+    std::vector<User> users;
+    std::ifstream file("Credenciales.dat", std::ios::binary); 
+
+    if (!file) return users;  // Retorna lista vacía si no existe el archivo
+
+    User user;
+    while (file.read(reinterpret_cast<char*>(&user), sizeof(User))) {
+        users.push_back(user);
+    }
+
+    file.close();
+    return users;
 }

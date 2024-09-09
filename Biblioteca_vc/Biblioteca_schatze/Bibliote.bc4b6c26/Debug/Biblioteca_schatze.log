@@ -1,326 +1,155 @@
 ﻿  Agregar_Usuario.cpp
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(213,14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(213,14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(215,14): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(215,14): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(218,14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(218,14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(220,14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(220,14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(223,14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(223,14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(225,14): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(225,14): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(227,14): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(227,14): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(229,14): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(229,14): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(232,14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(232,14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(234,14): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(234,14): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(238,14): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(238,14): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(240,14): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(240,14): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(243,14): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(243,14): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(245,14): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(245,14): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(248,14): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(248,14): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(250,14): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(250,14): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(252,14): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(252,14): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(254,14): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(254,14): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(257,14): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(257,14): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(259,14): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(259,14): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(293,14): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(293,14): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(295,14): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(295,14): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(298,14): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(298,14): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(300,14): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(300,14): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(303,14): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(303,14): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(305,14): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(305,14): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(307,14): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(307,14): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(309,14): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(309,14): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(312,14): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(312,14): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(314,14): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(314,14): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(318,14): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(318,14): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(320,14): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(320,14): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(323,14): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(323,14): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(325,14): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(325,14): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(328,14): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(328,14): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(330,14): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(330,14): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(332,14): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(332,14): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(334,14): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(334,14): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(337,14): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(337,14): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(339,14): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(339,14): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(851,14): warning C4996: '_wfopen': This function or variable may be unsafe. Consider using _wfopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(851,14): warning C4996: '_wfopen': This function or variable may be unsafe. Consider using _wfopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(853,14): warning C4996: '_wfreopen': This function or variable may be unsafe. Consider using _wfreopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(853,14): warning C4996: '_wfreopen': This function or variable may be unsafe. Consider using _wfreopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(1041,50): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(1041,50): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(1042,56): warning C4996: '_wgetenv': This function or variable may be unsafe. Consider using _wdupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(1042,56): warning C4996: '_wgetenv': This function or variable may be unsafe. Consider using _wdupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(1044,54): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(1044,54): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(1045,56): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(1045,56): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(1047,64): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(1047,64): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(1048,68): warning C4996: '_wgetenv': This function or variable may be unsafe. Consider using _wdupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\wxcrt.h(1048,68): warning C4996: '_wgetenv': This function or variable may be unsafe. Consider using _wdupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
   
-C:\Program Files (x86)\Wx\include\wx\filefn.h(410,14): warning C4996: '_wopen': This function or variable may be unsafe. Consider using _wsopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Program Files\WXLibrary\include\wx\filefn.h(410,14): warning C4996: '_wopen': This function or variable may be unsafe. Consider using _wsopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compilando archivo de origen "Agregar_Usuario.cpp")
-  
-C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Loguin_GUI.h(48,33): error C2597: referencia no válida a miembro no static 'Login_GUI::esAdmin'
-  (compilando archivo de origen "Agregar_Usuario.cpp")
-      C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Loguin_GUI.h(40,7):
-      vea la declaración de 'Login_GUI::esAdmin'
   
 C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Agregar_Usuario.cpp(111,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Agregar_Usuario.cpp(112,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Agregar_Usuario.cpp(113,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   Loguin_GUI.cpp
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(213,14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(215,14): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(218,14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(220,14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(223,14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(225,14): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(227,14): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(229,14): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(232,14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(234,14): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(238,14): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(240,14): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(243,14): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(245,14): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(248,14): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(250,14): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(252,14): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(254,14): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(257,14): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(259,14): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(293,14): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(295,14): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(298,14): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(300,14): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(303,14): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(305,14): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(307,14): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(309,14): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(312,14): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(314,14): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(318,14): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(320,14): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(323,14): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(325,14): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(328,14): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(330,14): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(332,14): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(334,14): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(337,14): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(339,14): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(851,14): warning C4996: '_wfopen': This function or variable may be unsafe. Consider using _wfopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(853,14): warning C4996: '_wfreopen': This function or variable may be unsafe. Consider using _wfreopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(1041,50): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(1042,56): warning C4996: '_wgetenv': This function or variable may be unsafe. Consider using _wdupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(1044,54): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(1045,56): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(1047,64): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\wxcrt.h(1048,68): warning C4996: '_wgetenv': This function or variable may be unsafe. Consider using _wdupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Program Files (x86)\Wx\include\wx\filefn.h(410,14): warning C4996: '_wopen': This function or variable may be unsafe. Consider using _wsopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compilando archivo de origen "Loguin_GUI.cpp")
-  
-C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Loguin_GUI.h(48,33): error C2597: referencia no válida a miembro no static 'Login_GUI::esAdmin'
-  (compilando archivo de origen "Loguin_GUI.cpp")
-      C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Loguin_GUI.h(40,7):
-      vea la declaración de 'Login_GUI::esAdmin'
-  
-  Main.cpp
-C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Loguin_GUI.h(48,33): error C2597: referencia no válida a miembro no static 'Login_GUI::esAdmin'
-  (compilando archivo de origen "Main.cpp")
-      C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Loguin_GUI.h(40,7):
-      vea la declaración de 'Login_GUI::esAdmin'
-  
   Main_GUI.cpp
-C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Loguin_GUI.h(48,33): error C2597: referencia no válida a miembro no static 'Login_GUI::esAdmin'
-  (compilando archivo de origen "Main_GUI.cpp")
-      C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Loguin_GUI.h(40,7):
-      vea la declaración de 'Login_GUI::esAdmin'
-  
-C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Main_GUI.cpp(11,11): error C2084: la función 'Main_GUI::Main_GUI(wxWindow *,wxWindowID,const wxString &,const wxPoint &,const wxSize &,long)' ya tiene un cuerpo
-      C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Main_GUI.h(40,2):
-      vea la definición anterior de “Main_GUI::Main_GUI”
-  
   Generando código...
+  Biblioteca_schatze.vcxproj -> C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Debug\Biblioteca_schatze.exe

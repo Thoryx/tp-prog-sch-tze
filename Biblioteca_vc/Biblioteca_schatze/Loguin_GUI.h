@@ -1,52 +1,51 @@
-#ifndef __Logui_GUI__
-#define __Logui_GUI__
+#ifndef __Loguin_GUI__
+#define __Loguin_GUI__
 
-#include <wx/artprov.h> //configuracionesVentana
-#include <wx/xrc/xmlres.h>
-#include <wx/string.h>
-#include <wx/stattext.h>
-#include <wx/gdicmn.h>
-#include <wx/font.h>
-#include <wx/colour.h>
-#include <wx/settings.h>
-#include <wx/textctrl.h>
-#include <wx/sizer.h>
-#include <wx/button.h>
-#include <wx/gbsizer.h>
-#include <wx/frame.h>
-#include <wx/listbox.h>//endconfiguracionesventana
 
-#include <wx/msgdlg.h>  // Para wxMessageBox
+#include <wx/wx.h>
+#include <wx/statbmp.h>  // Para wxStaticBitmap
 
 
 
 
-///////////////////////////////////////////////////////////////////////////////
-/// Class Login_GUI
-///////////////////////////////////////////////////////////////////////////////
-class Login_GUI : public wxFrame
-{
-private:
-	//declaracion de cajas de texto para extraer datos
-	wxTextCtrl* Login_Usuario_ingresado;
-	wxTextCtrl* Login_Contrasenia_ingresado;
-	
+// Definir la estructura de usuario
+struct User {
+    char username[20];
+    char password[8];
+    bool isAdmin;
 
-protected:
-	//declaracion de cajas de texto estatico
-	wxStaticText* Label_Estatica_Usuario;
-	wxStaticText* Label_Estatica_Contrasenia;
-	wxButton* B_Ingresar;
-	bool esAdmin = false;
-
-	// Virtual event handlers
-	virtual void Check(wxCommandEvent& event);
-
-public:
-	//Constructor
-	Login_GUI(wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize(800, 600), long style = wxDEFAULT_FRAME_STYLE | wxTAB_TRAVERSAL);
-	static bool Ver_Rol() { return esAdmin; }
-	//destructor
-	~Login_GUI();
+    User() : isAdmin(false) {}
 };
-#endif //__NONAME_H__
+
+
+class Loguin_GUI : public wxFrame {
+public:
+   
+    Loguin_GUI(const wxString& title);
+
+private:
+    // Controles de la interfaz
+    wxTextCtrl* userTextCtrl;
+    wxTextCtrl* passTextCtrl;
+    wxButton* loginButton;
+    wxButton* registerButton;
+    wxStaticText* statusText;
+    User currentUser;
+   
+
+    // Métodos para manejar eventos
+    void OnLogin(wxCommandEvent& event);
+    void OnRegister(wxCommandEvent& event);
+    bool Authenticate(const std::string& username, const std::string& password);
+    bool SaveUser(const User& user);
+
+    // Método helper para cargar usuarios desde archivo
+    std::vector<User> LoadUsers();
+
+    bool ContainsSpaces(const std::string& str);
+    
+
+    wxDECLARE_EVENT_TABLE();
+};
+
+#endif
