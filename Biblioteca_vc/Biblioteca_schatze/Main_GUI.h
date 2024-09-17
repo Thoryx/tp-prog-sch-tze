@@ -5,7 +5,7 @@
 
 class Main_GUI : public wxFrame {
 public:
-    Main_GUI(const wxString& title, bool isAdmin);
+    Main_GUI(const wxString& title, bool isAdmin, const wxString& activeUser);
 
 private:
     // Botones para los usuarios no admin
@@ -20,6 +20,8 @@ private:
 
     // Atributo para determinar si el usuario es administrador
     bool userIsAdmin;
+    //atributo para guardarme el usuario
+    wxString ActiveUser;
 
     // Métodos para manejar eventos
     void OnViewBookDetails(wxCommandEvent& event);

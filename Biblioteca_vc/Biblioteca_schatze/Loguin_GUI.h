@@ -1,5 +1,5 @@
-#ifndef __Loguin_GUI__
-#define __Loguin_GUI__
+#ifndef __GestionarUser__
+#define __GestionarUser__
 
 
 #include <wx/wx.h>
@@ -38,7 +38,7 @@ private:
     void OnRegister(wxCommandEvent& event);
     bool Authenticate(const std::string& username, const std::string& password);
     bool SaveUser(const User& user);
-
+    bool IsUsernameDuplicate(const wxString& username);
     // Método helper para cargar usuarios desde archivo
     std::vector<User> LoadUsers();
 

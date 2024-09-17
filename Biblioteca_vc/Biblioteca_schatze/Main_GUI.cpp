@@ -1,6 +1,6 @@
 
 #include "Main_GUI.h"
-
+#include "GestionarUser.h"
 //auto id para gestionar eventos
 enum {
     ID_ViewBookDetails = 1,
@@ -20,9 +20,9 @@ EVT_BUTTON(ID_ManageBooks, Main_GUI::OnManageBooks)
 EVT_BUTTON(ID_ManageUsers, Main_GUI::OnManageUsers)
 wxEND_EVENT_TABLE()
 
-Main_GUI::Main_GUI(const wxString& title, bool isAdmin)
+Main_GUI::Main_GUI(const wxString& title, bool isAdmin, const wxString& activeUser)
     : wxFrame(nullptr, wxID_ANY, title, wxDefaultPosition, wxSize(400, 300)),
-    userIsAdmin(isAdmin) {
+    userIsAdmin(isAdmin), ActiveUser(activeUser){
 
     wxPanel* panel = new wxPanel(this, wxID_ANY);
 
@@ -84,5 +84,7 @@ void Main_GUI::OnManageBooks(wxCommandEvent& event) {
 }
 
 void Main_GUI::OnManageUsers(wxCommandEvent& event) {
-    //En Progreso
+    wxFrame* mainWindow = new GestionarUser("Gestor Usuarios",ActiveUser);
+    mainWindow->Show();
+    this->Close();
 }

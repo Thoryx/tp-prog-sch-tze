@@ -147,13 +147,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Agregar_Usuario.cpp" />
+    <ClCompile Include="GestionarUser.cpp" />
     <ClCompile Include="Loguin_GUI.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Main_GUI.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Agregar_Usuario.h" />
+    <ClInclude Include="GestionarUser.h" />
     <ClInclude Include="Loguin_GUI.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="Main_GUI.h" />

@@ -78,7 +78,6 @@ Loguin_GUI::Loguin_GUI(const wxString& title)
 
     // Centrar la ventana
     Centre();
-
 }
 
 void Loguin_GUI::OnLogin(wxCommandEvent& event) {
@@ -86,20 +85,19 @@ void Loguin_GUI::OnLogin(wxCommandEvent& event) {
     std::string password = passTextCtrl->GetValue().ToStdString();
     if (Authenticate(username, password)) {
         statusText->SetLabel("¡Inicio de sesión exitoso!");
-        wxFrame* mainWindow = new Main_GUI("Home", currentUser.isAdmin);
+        wxFrame* mainWindow = new Main_GUI("Home", currentUser.isAdmin, currentUser.username);
         mainWindow->Show();
         this->Close();
     }
-    
     else {
         statusText->SetLabel("Credenciales incorrectas.");
     }
 }
 
-// funcion para evitar el uso de espacios
 bool Loguin_GUI::ContainsSpaces(const std::string& str) {
     return std::find_if(str.begin(), str.end(), ::isspace) != str.end();
 }
+
 void Loguin_GUI::OnRegister(wxCommandEvent& event) {
     std::string username = userTextCtrl->GetValue().ToStdString();
     std::string password = passTextCtrl->GetValue().ToStdString();
@@ -117,6 +115,12 @@ void Loguin_GUI::OnRegister(wxCommandEvent& event) {
     }
     if (password.length() > 8) {
         statusText->SetLabel("Contraseña demasiado larga (máx. 8 caracteres).");
+        return;
+    }
+
+    // Verificar si el nombre de usuario ya existe
+    if (IsUsernameDuplicate(userTextCtrl->GetValue())) {
+        statusText->SetLabel("Nombre de usuario ya registrado.");
         return;
     }
 
@@ -144,10 +148,8 @@ bool Loguin_GUI::Authenticate(const std::string& username, const std::string& pa
     return false;
 }
 
-
-
 bool Loguin_GUI::SaveUser(const User& user) {
-    std::ofstream file("users.dat", std::ios::app | std::ios::binary);
+    std::ofstream file("Credenciales.dat", std::ios::app | std::ios::binary);
     if (!file) {
         statusText->SetLabel("Error al abrir el archivo para guardar.");
         return false;
@@ -159,10 +161,9 @@ bool Loguin_GUI::SaveUser(const User& user) {
     return true;
 }
 
-
 std::vector<User> Loguin_GUI::LoadUsers() {
     std::vector<User> users;
-    std::ifstream file("Credenciales.dat", std::ios::binary); 
+    std::ifstream file("Credenciales.dat", std::ios::binary);
 
     if (!file) return users;  // Retorna lista vacía si no existe el archivo
 
@@ -173,4 +174,15 @@ std::vector<User> Loguin_GUI::LoadUsers() {
 
     file.close();
     return users;
+}
+
+// Ahora verifica los usuarios cargados directamente desde el archivo
+bool Loguin_GUI::IsUsernameDuplicate(const wxString& username) {
+    std::vector<User> users = LoadUsers();
+    for (const auto& user : users) {
+        if (username == wxString(user.username)) {
+            return true;  // Ya existe un usuario con este nombre
+        }
+    }
+    return false;  // No hay duplicado
 }
