@@ -1,6 +1,8 @@
 
 #include "Main_GUI.h"
 #include "GestionarUser.h"
+
+#include "Books.h"
 //auto id para gestionar eventos
 enum {
     ID_ViewBookDetails = 1,
@@ -8,7 +10,8 @@ enum {
     ID_AddToFavorites,
     ID_ViewFavorites,
     ID_ManageBooks,
-    ID_ManageUsers
+    ID_ManageUsers,
+    ID_BookList
 };
 
 wxBEGIN_EVENT_TABLE(Main_GUI, wxFrame)
@@ -21,7 +24,7 @@ EVT_BUTTON(ID_ManageUsers, Main_GUI::OnManageUsers)
 wxEND_EVENT_TABLE()
 
 Main_GUI::Main_GUI(const wxString& title, bool isAdmin, const wxString& activeUser)
-    : wxFrame(nullptr, wxID_ANY, title, wxDefaultPosition, wxSize(400, 300)),
+    : wxFrame(nullptr, wxID_ANY, title, wxDefaultPosition, wxSize(800, 600)),
     userIsAdmin(isAdmin), ActiveUser(activeUser){
 
     wxPanel* panel = new wxPanel(this, wxID_ANY);
@@ -54,6 +57,21 @@ Main_GUI::Main_GUI(const wxString& title, bool isAdmin, const wxString& activeUs
 
         vbox->Add(manageBooksBtn, 0, wxALL | wxEXPAND, 10);
         vbox->Add(manageUsersBtn, 0, wxALL | wxEXPAND, 10);
+       
+    }
+
+    // Lista de libros
+  
+        
+    if  (!userIsAdmin) {
+        bookList = new wxListBox(panel, ID_BookList);
+        vbox->Add(bookList, 1, wxEXPAND | wxLEFT | wxRIGHT | wxBOTTOM, 10);
+
+        // Cargar los libros desde el archivo
+        std::vector<Book> books = LoadBooks();
+        for (const auto& book : books) {
+            bookList->Append(wxString(book.title));
+        }
     }
 
     // Establecer el sizer al panel
@@ -80,11 +98,26 @@ void Main_GUI::OnViewFavorites(wxCommandEvent& event) {
 }
 
 void Main_GUI::OnManageBooks(wxCommandEvent& event) {
-    //En Progreso
+    wxFrame* mainWindow = new Books("Gestor Libros", userIsAdmin, ActiveUser);
+    mainWindow->Show();
+    this->Close();
 }
 
 void Main_GUI::OnManageUsers(wxCommandEvent& event) {
-    wxFrame* mainWindow = new GestionarUser("Gestor Usuarios",ActiveUser);
+    wxFrame* mainWindow = new GestionarUser("Gestor Usuarios", userIsAdmin, ActiveUser);
     mainWindow->Show();
     this->Close();
+}
+
+std::vector<Book> Main_GUI::LoadBooks() {
+    std::vector<Book> books;
+    std::ifstream file("books.dat", std::ios::binary);
+    if (!file) return books;
+
+    Book book;
+    while (file.read(reinterpret_cast<char*>(&book), sizeof(Book))) {
+        books.push_back(book);
+    }
+    file.close();
+    return books;
 }

@@ -1,6 +1,7 @@
 #ifndef __Main_GUI__
 #define __Main_GUI__
 #include <wx/wx.h>
+#include "Books.h"
 
 
 class Main_GUI : public wxFrame {
@@ -8,6 +9,9 @@ public:
     Main_GUI(const wxString& title, bool isAdmin, const wxString& activeUser);
 
 private:
+    wxListBox* bookList;
+    std::vector<Book> LoadBooks();
+
     // Botones para los usuarios no admin
     wxButton* viewBookDetailsBtn;
     wxButton* searchBookBtn;

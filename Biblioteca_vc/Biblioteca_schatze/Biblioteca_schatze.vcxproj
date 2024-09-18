@@ -147,12 +147,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Books.cpp" />
     <ClCompile Include="GestionarUser.cpp" />
     <ClCompile Include="Loguin_GUI.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Main_GUI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Books.h" />
     <ClInclude Include="GestionarUser.h" />
     <ClInclude Include="Loguin_GUI.h" />
     <ClInclude Include="Main.h" />

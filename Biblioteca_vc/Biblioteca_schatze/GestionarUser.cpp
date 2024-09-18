@@ -1,5 +1,5 @@
 #include "GestionarUser.h"
-
+#include "Main_GUI.h"
 #define DATA_FILE "Credenciales.dat"
 
 enum {
@@ -19,9 +19,9 @@ EVT_BUTTON(ID_DELETE_USER, GestionarUser::OnDeleteUser)
 EVT_BUTTON(ID_BACK_BUTTON, GestionarUser::OnBack)
 wxEND_EVENT_TABLE()
 
-GestionarUser::GestionarUser(const wxString& title, const wxString& activeUser)
+GestionarUser::GestionarUser(const wxString& title, bool isAdmin, const wxString& activeUser)
     : wxFrame(nullptr, wxID_ANY, title, wxDefaultPosition, wxSize(400, 400)),
-    activeUser(activeUser) {
+    userIsAdmin(isAdmin), ActiveUser(activeUser) {
 
     userListBox = new wxListBox(this, wxID_ANY, wxPoint(10, 10), wxSize(180, 300));
     editUserButton = new wxButton(this, ID_EDIT_USER, "Editar Usuario", wxPoint(200, 10), wxSize(150, 30));
@@ -174,12 +174,12 @@ void GestionarUser::OnDeleteUser(wxCommandEvent& event) {
     User* selectedUser = GetSelectedUser();
     if (selectedUser) {
         wxString selectedUsername = wxString(selectedUser->username);
-        if (selectedUsername == activeUser) {
+        if (selectedUsername == ActiveUser) {
             wxMessageBox("No puedes eliminar el usuario con el que has iniciado sesión.", "Error");
             return;
         }
         if (selectedUser->isAdmin) {
-            wxString enteredPassword = wxGetPasswordFromUser("Ingrese la supercontraseña para cambiar el rol:", "Supercontraseña");
+            wxString enteredPassword = wxGetPasswordFromUser("Ingrese la supercontraseña para eliminar este usuario:", "Supercontraseña");
             if (enteredPassword == superPassword) {
                 int confirm = wxMessageBox("¿Está seguro de que desea eliminar este usuario?", "Confirmar eliminación", wxYES_NO | wxICON_QUESTION);
                 if (confirm == wxYES) {
@@ -204,5 +204,7 @@ void GestionarUser::OnDeleteUser(wxCommandEvent& event) {
 }
 
 void GestionarUser::OnBack(wxCommandEvent& event) {
-    Close();
+    wxFrame* mainWindow = new Main_GUI("Gestor Usuarios",userIsAdmin, ActiveUser);
+    mainWindow->Show();
+    this->Close();
 }

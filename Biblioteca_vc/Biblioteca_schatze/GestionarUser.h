@@ -19,7 +19,7 @@ struct User {
 class GestionarUser : public wxFrame {
 public:
     // Constructor: Se inicializa con el título y el nombre del usuario activo
-    GestionarUser(const wxString& title, const wxString& activeUser);
+    GestionarUser(const wxString& title, bool isAdmin, const wxString& activeUser);
 
     // Destructor: Libera los recursos utilizados
     ~GestionarUser();
@@ -36,7 +36,8 @@ private:
     // Datos y almacenamiento
     std::vector<User> users; // Vector que almacena los usuarios cargados del archivo binario
     const wxString superPassword = "SuperAdmin123"; // Supercontraseña para cambiar roles de administrador
-    wxString activeUser; // Nombre del usuario actualmente registrado
+    wxString ActiveUser; // Nombre del usuario actualmente registrado
+    bool userIsAdmin;
 
     // Funciones para gestionar usuarios y la interfaz gráfica
     void LoadUsersFromFile();   // Carga los usuarios desde el archivo binario
