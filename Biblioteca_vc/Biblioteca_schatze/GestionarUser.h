@@ -2,9 +2,9 @@
 #define GESTIONARUSER_H
 
 #include <wx/wx.h>
-#include <wx/listbox.h>
 #include <vector>
-#include <fstream>
+
+
 
 // Estructura de usuario que contiene el nombre, contraseña y si es administrador o no
 struct User {

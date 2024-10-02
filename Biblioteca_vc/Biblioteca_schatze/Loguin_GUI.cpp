@@ -186,3 +186,4 @@ bool Loguin_GUI::IsUsernameDuplicate(const wxString& username) {
     }
     return false;  // No hay duplicado
 }
+

@@ -1,8 +1,11 @@
 
-#include "Main_GUI.h"
-#include "GestionarUser.h"
-
 #include "Books.h"
+#include "GestionarUser.h"
+#include "Main_GUI.h"
+#include "Ver_Libro.h"
+#include "fstream"
+#define DATA_FILE "Books.dat"
+
 //auto id para gestionar eventos
 enum {
     ID_ViewBookDetails = 1,
@@ -38,17 +41,7 @@ Main_GUI::Main_GUI(const wxString& title, bool isAdmin, const wxString& activeUs
     // Sizer principal para la disposición vertical de los botones
     wxBoxSizer* vbox = new wxBoxSizer(wxVERTICAL);
 
-    // Botones para todos los usuarios
-    viewBookDetailsBtn = new wxButton(panel, ID_ViewBookDetails, wxT("Ver detalles del libro"));
-    searchBookBtn = new wxButton(panel, ID_SearchBook, wxT("Buscar un libro"));
-    addToFavoritesBtn = new wxButton(panel, ID_AddToFavorites, wxT("Agregar a favoritos"));
-    viewFavoritesBtn = new wxButton(panel, ID_ViewFavorites, wxT("Ver lista de favoritos"));
-
-    // Añadir los botones al sizer
-    vbox->Add(viewBookDetailsBtn, 0, wxALL | wxEXPAND, 10);
-    vbox->Add(searchBookBtn, 0, wxALL | wxEXPAND, 10);
-    vbox->Add(addToFavoritesBtn, 0, wxALL | wxEXPAND, 10);
-    vbox->Add(viewFavoritesBtn, 0, wxALL | wxEXPAND, 10);
+    
 
     // Si el usuario es administrador, agregamos los botones de gestión
     if (userIsAdmin) {
@@ -58,6 +51,19 @@ Main_GUI::Main_GUI(const wxString& title, bool isAdmin, const wxString& activeUs
         vbox->Add(manageBooksBtn, 0, wxALL | wxEXPAND, 10);
         vbox->Add(manageUsersBtn, 0, wxALL | wxEXPAND, 10);
        
+    }
+    else {
+        // Botones para todos los usuarios
+        viewBookDetailsBtn = new wxButton(panel, ID_ViewBookDetails, wxT("Ver detalles del libro"));
+        searchBookBtn = new wxButton(panel, ID_SearchBook, wxT("Buscar un libro"));
+        addToFavoritesBtn = new wxButton(panel, ID_AddToFavorites, wxT("Agregar a favoritos"));
+        viewFavoritesBtn = new wxButton(panel, ID_ViewFavorites, wxT("Ver lista de favoritos"));
+
+        // Añadir los botones al sizer
+        vbox->Add(viewBookDetailsBtn, 0, wxALL | wxEXPAND, 10);
+        vbox->Add(searchBookBtn, 0, wxALL | wxEXPAND, 10);
+        vbox->Add(addToFavoritesBtn, 0, wxALL | wxEXPAND, 10);
+        vbox->Add(viewFavoritesBtn, 0, wxALL | wxEXPAND, 10);
     }
 
     // Lista de libros
@@ -82,7 +88,10 @@ Main_GUI::Main_GUI(const wxString& title, bool isAdmin, const wxString& activeUs
 }
 
 void Main_GUI::OnViewBookDetails(wxCommandEvent& event) {
-    //En Progreso
+    OnSelectBook();
+    wxFrame* mainWindow = new Ver_Libro("Ver detalles", userIsAdmin, ActiveUser , TitleDetails);
+    mainWindow->Show();
+    this->Close();
 }
 
 void Main_GUI::OnSearchBook(wxCommandEvent& event) {
@@ -120,4 +129,21 @@ std::vector<Book> Main_GUI::LoadBooks() {
     }
     file.close();
     return books;
+}
+
+void Main_GUI::OnSelectBook() {
+    int selection = bookList->GetSelection();  // Obtén el índice seleccionado en el control de la lista
+
+    if (selection != wxNOT_FOUND) {  // Verifica que haya una selección válida
+        std::vector<Book> books = LoadBooks();  // Carga los libros desde el archivo o fuente
+
+        // Recorre el vector de libros
+        for (size_t i = 0; i < books.size(); ++i) {
+            if (i == selection) {  // Si el índice coincide con la selección
+                // Pasa el índice encontrado a la función set_TitleDetails o haz otra acción
+                set_TitleDetails(i);
+                break;  // Detén el bucle una vez encontrado el índice correspondiente
+            }
+        }
+    }
 }

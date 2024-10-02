@@ -1,13 +1,6 @@
 #ifndef __GestionarUser__
 #define __GestionarUser__
-
-
 #include <wx/wx.h>
-#include <wx/statbmp.h>  // Para wxStaticBitmap
-
-
-
-
 // Definir la estructura de usuario
 struct User {
     char username[20];

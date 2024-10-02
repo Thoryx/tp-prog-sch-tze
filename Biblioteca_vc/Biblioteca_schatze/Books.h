@@ -3,7 +3,8 @@
 
 #include <wx/wx.h>
 #include <vector>
-#include <fstream>
+
+
 
 // Estructura de libro
 struct Book {

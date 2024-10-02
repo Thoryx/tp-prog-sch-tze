@@ -1,5 +1,6 @@
 #ifndef __Main_GUI__
 #define __Main_GUI__
+
 #include <wx/wx.h>
 #include "Books.h"
 
@@ -26,6 +27,8 @@ private:
     bool userIsAdmin;
     //atributo para guardarme el usuario
     wxString ActiveUser;
+    //atributo para pasar el nombre del libro a mostrar detalles
+    int TitleDetails;
 
     // Métodos para manejar eventos
     void OnViewBookDetails(wxCommandEvent& event);
@@ -34,6 +37,13 @@ private:
     void OnViewFavorites(wxCommandEvent& event);
     void OnManageBooks(wxCommandEvent& event);
     void OnManageUsers(wxCommandEvent& event);
+    void OnSelectBook();
+   
+   
+    void set_TitleDetails(int title) {
+
+        TitleDetails = title;
+    }
 
     //declaracion tabla de eventos
     wxDECLARE_EVENT_TABLE();

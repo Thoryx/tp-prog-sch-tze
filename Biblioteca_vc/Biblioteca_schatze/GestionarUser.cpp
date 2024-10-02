@@ -1,7 +1,7 @@
 #include "GestionarUser.h"
 #include "Main_GUI.h"
+#include <fstream>
 #define DATA_FILE "Credenciales.dat"
-
 enum {
     ID_EDIT_USER = wxID_HIGHEST + 1,
     ID_EDIT_PASSWORD,
