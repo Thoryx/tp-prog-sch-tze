@@ -4,6 +4,7 @@
 #include "Main_GUI.h"
 #include "Ver_Libro.h"
 #include "fstream"
+#include "Favorites.h"
 #define DATA_FILE "Books.dat"
 
 //auto id para gestionar eventos
@@ -58,12 +59,15 @@ Main_GUI::Main_GUI(const wxString& title, bool isAdmin, const wxString& activeUs
         searchBookBtn = new wxButton(panel, ID_SearchBook, wxT("Buscar un libro"));
         addToFavoritesBtn = new wxButton(panel, ID_AddToFavorites, wxT("Agregar a favoritos"));
         viewFavoritesBtn = new wxButton(panel, ID_ViewFavorites, wxT("Ver lista de favoritos"));
+        statusText = new wxStaticText(panel, wxID_ANY, wxT(""), wxDefaultPosition, wxSize(250, 25));
+        
 
         // Añadir los botones al sizer
         vbox->Add(viewBookDetailsBtn, 0, wxALL | wxEXPAND, 10);
         vbox->Add(searchBookBtn, 0, wxALL | wxEXPAND, 10);
         vbox->Add(addToFavoritesBtn, 0, wxALL | wxEXPAND, 10);
         vbox->Add(viewFavoritesBtn, 0, wxALL | wxEXPAND, 10);
+        vbox->Add(statusText, 0, wxALIGN_CENTER | wxTOP, 10);
     }
 
     // Lista de libros
@@ -89,7 +93,7 @@ Main_GUI::Main_GUI(const wxString& title, bool isAdmin, const wxString& activeUs
 
 void Main_GUI::OnViewBookDetails(wxCommandEvent& event) {
     OnSelectBook();
-    wxFrame* mainWindow = new Ver_Libro("Ver detalles", userIsAdmin, ActiveUser , TitleDetails);
+    wxFrame* mainWindow = new Ver_Libro("Ver detalles", userIsAdmin, ActiveUser , BookSelected,'M');
     mainWindow->Show();
     this->Close();
 }
@@ -99,11 +103,49 @@ void Main_GUI::OnSearchBook(wxCommandEvent& event) {
 }
 
 void Main_GUI::OnAddToFavorites(wxCommandEvent& event) {
-    //En Progreso
+    int selection = bookList->GetSelection();
+    if (selection != wxNOT_FOUND) {
+        // Cargar los libros favoritos actuales del usuario
+        std::vector<Book> favorites = LoadFavorites(ActiveUser);
+
+        // Cargar el libro seleccionado
+        std::vector<Book> books = LoadBooks();
+        if (selection < books.size()) {
+            Book favoriteBook = books[selection];
+
+            // Verificar si el libro ya está en favoritos
+            bool alreadyInFavorites = false;
+            for (const auto& favBook : favorites) {
+                if (strcmp(favBook.title, favoriteBook.title) == 0 &&
+                    strcmp(favBook.author, favoriteBook.author) == 0) {
+                    alreadyInFavorites = true;
+                    break;
+                }
+            }
+
+            if (!alreadyInFavorites) {
+                // Añadir el libro a favoritos
+                favorites.push_back(favoriteBook);
+                SaveFavorites(favorites, ActiveUser);
+
+                // Mostrar mensaje de éxito
+                statusText->SetLabel("¡Libro añadido a favoritos!");
+            }
+            else {
+                statusText->SetLabel("Este libro ya está en tus favoritos.");
+            }
+        }
+    }
+    else {
+        statusText->SetLabel("No se ha seleccionado ningún libro.");
+    }
 }
 
+
 void Main_GUI::OnViewFavorites(wxCommandEvent& event) {
-    //En Progreso
+    wxFrame* mainWindow = new FavoritesWindow("Favoritos", userIsAdmin, ActiveUser);
+    mainWindow->Show();
+    this->Close();
 }
 
 void Main_GUI::OnManageBooks(wxCommandEvent& event) {
@@ -141,9 +183,55 @@ void Main_GUI::OnSelectBook() {
         for (size_t i = 0; i < books.size(); ++i) {
             if (i == selection) {  // Si el índice coincide con la selección
                 // Pasa el índice encontrado a la función set_TitleDetails o haz otra acción
-                set_TitleDetails(i);
+                set_BookSelected(i);
                 break;  // Detén el bucle una vez encontrado el índice correspondiente
             }
         }
     }
 }
+
+std::vector<Book> Main_GUI::LoadFavorites(const wxString& username) {
+    std::vector<Book> favorites;
+    wxString filePath = wxString::Format("Listas/favorites_%s.dat", username);
+    std::ifstream file(filePath.ToStdString(), std::ios::binary);
+
+    if (!file) {
+        return favorites;  // Devuelve un vector vacío si no existe el archivo
+    }
+
+    Book book;
+    while (file.read(reinterpret_cast<char*>(&book), sizeof(Book))) {
+        favorites.push_back(book);
+    }
+    file.close();
+    return favorites;
+}
+
+void Main_GUI::SaveFavorites(const std::vector<Book>& favorites, const wxString& username) {
+    // Cargar libros favoritos existentes
+    std::vector<Book> existingFavorites = LoadFavorites(username);
+
+    // Verificar si el nuevo libro ya está en la lista
+    for (const auto& favorite : existingFavorites) {
+        if (strcmp(favorite.title, favorites.back().title) == 0) {  // Comparar por título
+            wxMessageBox("Este libro ya está en la lista de favoritos.", "Duplicado", wxOK | wxICON_WARNING);
+            return; // Salir si ya existe
+        }
+    }
+
+    // Agregar el nuevo libro a la lista de favoritos
+    existingFavorites.push_back(favorites.back());
+
+    // Guardar la lista actualizada
+    std::ofstream file("Listas/favorites_" + username.ToStdString() + ".dat", std::ios::binary | std::ios::trunc);
+    if (!file) {
+        wxLogError("Error al abrir el archivo de favoritos para guardar.");
+        return;
+    }
+
+    for (const auto& book : existingFavorites) {
+        file.write(reinterpret_cast<const char*>(&book), sizeof(Book));
+    }
+    file.close();
+}
+

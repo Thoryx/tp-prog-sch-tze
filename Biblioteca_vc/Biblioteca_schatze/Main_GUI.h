@@ -28,7 +28,11 @@ private:
     //atributo para guardarme el usuario
     wxString ActiveUser;
     //atributo para pasar el nombre del libro a mostrar detalles
-    int TitleDetails;
+    int BookSelected;
+    //label para mensajes
+    wxStaticText* statusText;
+    //Ruta para listas de favoritos
+    const wxString basePath = wxT("\Listas");
 
     // Métodos para manejar eventos
     void OnViewBookDetails(wxCommandEvent& event);
@@ -39,10 +43,11 @@ private:
     void OnManageUsers(wxCommandEvent& event);
     void OnSelectBook();
    
-   
-    void set_TitleDetails(int title) {
+    std::vector<Book> LoadFavorites(const wxString& username);
+    void SaveFavorites(const std::vector<Book>& favorites, const wxString& username);
+    void set_BookSelected(int selection) {
 
-        TitleDetails = title;
+        BookSelected = selection;
     }
 
     //declaracion tabla de eventos

@@ -1,3 +1,16 @@
-﻿  Ver_Libro.cpp
+﻿  Favorites.cpp
+C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Main_GUI.h(35,31): warning C4129: “L”: secuencia de escape de caracteres no reconocida
+  (compilando archivo de origen "Favorites.cpp")
+  
+  Main_GUI.cpp
+C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Main_GUI.h(35,31): warning C4129: “L”: secuencia de escape de caracteres no reconocida
+  (compilando archivo de origen "Main_GUI.cpp")
+  
+C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Main_GUI.cpp(113,23): warning C4018: '<': no coinciden signed/unsigned
+  Ver_Libro.cpp
+C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Main_GUI.h(35,31): warning C4129: “L”: secuencia de escape de caracteres no reconocida
+  (compilando archivo de origen "Ver_Libro.cpp")
+  
 C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Ver_Libro.cpp(76,41): warning C4018: '<': no coinciden signed/unsigned
+  Generando código...
   Biblioteca_schatze.vcxproj -> C:\Users\engle\OneDrive\DS Itec\2do Año\Codes\TP_Final_P1\schätze\Biblioteca\Biblioteca_vc\Biblioteca_schatze\Debug\Biblioteca_schatze.exe

@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Books.cpp" />
+    <ClCompile Include="Favorites.cpp" />
     <ClCompile Include="GestionarUser.cpp" />
     <ClCompile Include="Loguin_GUI.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -156,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Books.h" />
+    <ClInclude Include="Favorites.h" />
     <ClInclude Include="GestionarUser.h" />
     <ClInclude Include="Loguin_GUI.h" />
     <ClInclude Include="Main.h" />

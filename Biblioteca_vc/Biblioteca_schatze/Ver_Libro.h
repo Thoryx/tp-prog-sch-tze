@@ -8,7 +8,7 @@
 class Ver_Libro : public wxFrame {
 public:
     // Constructor: Se inicializa con el título y el nombre del usuario activo
-    Ver_Libro(const wxString& title, bool isAdmin, const wxString& activeUser , const int& selection);
+    Ver_Libro(const wxString& title, bool isAdmin, const wxString& activeUser , const int& selection,const  char& panel_p);
 
     
 
@@ -18,7 +18,7 @@ private:
     wxStaticText* Autor;
     wxStaticText* Genero;
     wxStaticText* anio;
-
+    const char panel_padre;
     wxButton* backButton;
 
     // Atributo para determinar si el usuario es administrador
@@ -30,7 +30,7 @@ private:
 
    void SetLabels();
     std::vector<Book> LoadBooks();
-    void OnBackToMain(wxCommandEvent& evente);
+    void OnBack(wxCommandEvent& event);
     // Funciones auxiliares
   
    // Destructor: Libera los recursos utilizados

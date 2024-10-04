@@ -1,20 +1,20 @@
 #include "Ver_Libro.h"
 #include "Main_GUI.h"
+#include "Favorites.h"
 #include "Books.h"
 #include <fstream>
 #include <vector>
 
 enum {
-    ID_BackToMain = wxID_HIGHEST + 1,
+    ID_Back = wxID_HIGHEST + 1
 };
 
 wxBEGIN_EVENT_TABLE(Ver_Libro, wxFrame)
-
-EVT_BUTTON(ID_BackToMain, Ver_Libro::OnBackToMain)
+EVT_BUTTON(ID_Back, Ver_Libro::OnBack)
 wxEND_EVENT_TABLE()
 
-Ver_Libro::Ver_Libro(const wxString& title, bool isAdmin, const wxString& activeUser, const int& seleccion)
-    : wxFrame(nullptr, wxID_ANY, title, wxDefaultPosition, wxSize(400, 400)), userIsAdmin(isAdmin), ActiveUser(activeUser), selection(seleccion) {
+Ver_Libro::Ver_Libro(const wxString& title, bool isAdmin, const wxString& activeUser, const int& seleccion, const char& panel_p)
+    : wxFrame(nullptr, wxID_ANY, title, wxDefaultPosition, wxSize(400, 400)), userIsAdmin(isAdmin), ActiveUser(activeUser), selection(seleccion), panel_padre(panel_p) {
 
     wxBoxSizer* vbox = new wxBoxSizer(wxVERTICAL);
 
@@ -35,7 +35,7 @@ Ver_Libro::Ver_Libro(const wxString& title, bool isAdmin, const wxString& active
     anio = new wxStaticText(this, wxID_ANY, wxT(""));
     anio->SetFont(fontNormal);
 
-    backButton = new wxButton(this, ID_BackToMain, "Volver", wxDefaultPosition, wxSize(150, 40));
+    backButton = new wxButton(this, ID_Back, "Volver", wxDefaultPosition, wxSize(150, 40));
 
     SetLabels();
 
@@ -90,8 +90,16 @@ void Ver_Libro::SetLabels() {
     }
 }
 
-void Ver_Libro::OnBackToMain(wxCommandEvent& event) {
-    wxFrame* mainWindow = new Main_GUI("Main Window", userIsAdmin, ActiveUser);  // Crear instancia de Main_GUI
-    mainWindow->Show();
-    this->Close();  // Cerrar la ventana actual (Books)
+void Ver_Libro::OnBack(wxCommandEvent& event) {
+    if (panel_padre == 'M') {
+        wxFrame* mainWindow = new Main_GUI("Main Window", userIsAdmin, ActiveUser);  // Crear instancia de Main_GUI
+        mainWindow->Show();
+        this->Close();
+    }
+    else {
+        wxFrame* mainWindow = new FavoritesWindow("Favorites", userIsAdmin, ActiveUser);  // Crear instancia de Main_GUI
+        mainWindow->Show();
+        this->Close();
+
+    }
 }
