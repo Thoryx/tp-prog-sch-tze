@@ -5,46 +5,33 @@
 #include <vector>
 #include "Books.h"
 
+// Clase Ver_Libro que hereda de wxFrame, se utiliza para mostrar detalles de un libro
 class Ver_Libro : public wxFrame {
 public:
-    // Constructor: Se inicializa con el título y el nombre del usuario activo
-    Ver_Libro(const wxString& title, bool isAdmin, const wxString& activeUser , const int& selection,const  char& panel_p);
-
-    
+    // Constructor: inicializa la ventana con el título, los permisos del usuario y la selección del libro
+    Ver_Libro(const wxString& title, bool isAdmin, const wxString& activeUser, const int& selection, const char& panel_p);
 
 private:
-    // Componentes gráficos
-    wxStaticText* Titulo;
-    wxStaticText* Autor;
-    wxStaticText* Genero;
-    wxStaticText* anio;
-    const char panel_padre;
-    wxButton* backButton;
+    // Componentes gráficos para mostrar los detalles del libro
+    wxStaticText* Titulo;   // Texto estático para el título del libro
+    wxStaticText* Autor;    // Texto estático para el autor del libro
+    wxStaticText* Genero;   // Texto estático para el género del libro
+    wxStaticText* Anio;     // Texto estático para el año de publicación del libro
+    wxButton* backButton;    // Botón para regresar a la pantalla anterior
 
-    // Atributo para determinar si el usuario es administrador
-    bool userIsAdmin;
-    //atributo para guardarme el usuario
-    wxString ActiveUser;
-    //atributo para pasar el nombre del libro a mostrar detalles
-    int selection;
+    // Variables miembro
+    const char panel_padre;   // Identificador del panel padre
+    bool userIsAdmin;         // Indica si el usuario actual es administrador
+    wxString ActiveUser;      // Almacena el nombre del usuario activo
+    int selection;            // Almacena la selección del libro para mostrar detalles
 
-   void SetLabels();
-    std::vector<Book> LoadBooks();
-    void OnBack(wxCommandEvent& event);
-    // Funciones auxiliares
-  
-   // Destructor: Libera los recursos utilizados
-    
+    // Métodos privados
+    void SetLabels();                     // Método para establecer los textos de los componentes
+    std::vector<Book> LoadBooks();        // Método para cargar los libros desde una fuente
+    void OnBack(wxCommandEvent& event);   // Maneja el evento del botón de regreso
 
+    // Declaración de la tabla de eventos para manejar eventos específicos
     wxDECLARE_EVENT_TABLE();
 };
-
-
-
-
-
-
-
-
 
 #endif

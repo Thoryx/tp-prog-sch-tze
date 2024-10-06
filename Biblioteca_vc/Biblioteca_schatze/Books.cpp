@@ -1,42 +1,48 @@
 #include "Books.h"
 #include <wx/sizer.h>
-
 #include <fstream>
 #include <iostream>
-
 #include "Main_GUI.h"
 
 // Identificadores de eventos
 enum {
-    ID_AddBook = 1,
-    ID_DeleteBook,
-    ID_ModifyBook,
-    ID_BackToMain,
-    ID_BookList
+    ID_AddBook = 1,       // Identificador para el botón de añadir libro
+    ID_DeleteBook,        // Identificador para el botón de eliminar libro
+    ID_ModifyBook,        // Identificador para el botón de modificar libro
+    ID_BackToMain,        // Identificador para el botón de volver a la ventana principal
+    ID_BookList           // Identificador para la lista de libros
 };
 
+// Tabla de eventos para manejar eventos de los botones y la lista
 wxBEGIN_EVENT_TABLE(Books, wxFrame)
 EVT_BUTTON(ID_AddBook, Books::OnAddBook)
 EVT_BUTTON(ID_DeleteBook, Books::OnDeleteBook)
 EVT_BUTTON(ID_ModifyBook, Books::OnModifyBook)
 EVT_BUTTON(ID_BackToMain, Books::OnBackToMain)
-EVT_LISTBOX(ID_BookList, Books::OnSelectBook)  // Evento de selección
+EVT_LISTBOX(ID_BookList, Books::OnSelectBook)  // Evento de selección de libro
 wxEND_EVENT_TABLE()
 
+// Constructor de la clase Books
 Books::Books(const wxString& title, bool isAdmin, const wxString& activeUser)
     : wxFrame(nullptr, wxID_ANY, title, wxDefaultPosition, wxSize(800, 600)),
     userIsAdmin(isAdmin), ActiveUser(activeUser) {
 
+    // Establecer el color de fondo de la ventana
     SetBackgroundColour(wxColour(242, 230, 214));
+
     // Establecer el ícono de la ventana
     wxIcon icon;
     icon.LoadFile("Icono.ico", wxBITMAP_TYPE_ICO);
     SetIcon(icon);
+
+    // Crear un panel y un sizer vertical
     wxPanel* panel = new wxPanel(this, wxID_ANY);
     wxBoxSizer* vbox = new wxBoxSizer(wxVERTICAL);
 
-    // Sizer para organizar los campos del libro
+    // Sizer para organizar los campos del libro en una cuadrícula
     wxFlexGridSizer* gridSizer = new wxFlexGridSizer(4, 2, 10, 10);
+
+    // Agregar etiquetas y campos de texto para los detalles del libro
     gridSizer->Add(new wxStaticText(panel, wxID_ANY, wxT("Título:")), 0, wxALIGN_RIGHT);
     titleTextCtrl = new wxTextCtrl(panel, wxID_ANY);
     gridSizer->Add(titleTextCtrl, 1, wxEXPAND);
@@ -53,108 +59,119 @@ Books::Books(const wxString& title, bool isAdmin, const wxString& activeUser)
     yearTextCtrl = new wxTextCtrl(panel, wxID_ANY);
     gridSizer->Add(yearTextCtrl, 1, wxEXPAND);
 
-    gridSizer->AddGrowableCol(1, 1);  // Hacer que la segunda columna sea expansiva.
-    vbox->Add(gridSizer, 0, wxEXPAND | wxALL, 10);
+    gridSizer->AddGrowableCol(1, 1);  // Hacer que la segunda columna sea expansiva
+    vbox->Add(gridSizer, 0, wxEXPAND | wxALL, 10); // Añadir el sizer al sizer vertical
 
-    // Lista de libros
+    // Crear la lista de libros
     bookList = new wxListBox(panel, ID_BookList);
     vbox->Add(bookList, 1, wxEXPAND | wxLEFT | wxRIGHT | wxBOTTOM, 10);
 
-    // Botones de control
+    // Sizer horizontal para los botones de control
     wxBoxSizer* hbox = new wxBoxSizer(wxHORIZONTAL);
-    wxButton* addButton = new wxButton(panel, ID_AddBook, wxT("Añadir libro"));
-    wxButton* modifyButton = new wxButton(panel, ID_ModifyBook, wxT("Modificar libro"));
-    wxButton* deleteButton = new wxButton(panel, ID_DeleteBook, wxT("Eliminar libro"));
-    wxButton* backButton = new wxButton(panel, ID_BackToMain, wxT("Volver a la ventana principal"));
+    wxButton* addButton = new wxButton(panel, ID_AddBook, wxT("Añadir libro"));       // Botón para añadir libro
+    wxButton* modifyButton = new wxButton(panel, ID_ModifyBook, wxT("Modificar libro")); // Botón para modificar libro
+    wxButton* deleteButton = new wxButton(panel, ID_DeleteBook, wxT("Eliminar libro"));  // Botón para eliminar libro
+    wxButton* backButton = new wxButton(panel, ID_BackToMain, wxT("Volver a la ventana principal")); // Botón para volver
 
+    // Agregar botones al sizer horizontal
     hbox->Add(addButton, 0, wxRIGHT, 5);
     hbox->Add(modifyButton, 0, wxRIGHT, 5);
     hbox->Add(deleteButton, 0, wxRIGHT, 5);
     hbox->Add(backButton, 0, wxRIGHT, 5);
 
-    vbox->Add(hbox, 0, wxALIGN_CENTER | wxALL, 10);
+    vbox->Add(hbox, 0, wxALIGN_CENTER | wxALL, 10); // Añadir el sizer de botones al sizer vertical
 
-    // Texto de estado para mensajes
+    // Texto de estado para mostrar mensajes al usuario
     statusText = new wxStaticText(panel, wxID_ANY, wxT(""));
     vbox->Add(statusText, 0, wxALIGN_CENTER | wxBOTTOM, 10);
 
-    panel->SetSizer(vbox);
+    panel->SetSizer(vbox); // Establecer el sizer en el panel
 
-    // Cargar los libros desde el archivo
+    // Cargar los libros desde el archivo y mostrarlos en la lista
     std::vector<Book> books = LoadBooks();
     for (const auto& book : books) {
-        bookList->Append(wxString(book.title));
+        bookList->Append(wxString(book.title)); // Agregar cada libro a la lista
     }
 
-    // Centrar la ventana
+    // Centrar la ventana en la pantalla
     Centre();
 }
 
+// Método para añadir un libro
 void Books::OnAddBook(wxCommandEvent& event) {
-    // Implementa la lógica para añadir un libro
-    Book newBook;
+    Book newBook; // Crear un nuevo libro
+
+    // Obtener los valores de los campos de texto y almacenarlos en el nuevo libro
     strncpy(newBook.title, titleTextCtrl->GetValue().ToStdString().c_str(), sizeof(newBook.title));
     strncpy(newBook.author, authorTextCtrl->GetValue().ToStdString().c_str(), sizeof(newBook.author));
     strncpy(newBook.genre, genreTextCtrl->GetValue().ToStdString().c_str(), sizeof(newBook.genre));
     newBook.year = wxAtoi(yearTextCtrl->GetValue());
 
-    // Añadir el libro a la lista y guardarlo en el archivo
+    // Cargar los libros existentes, agregar el nuevo libro y guardarlos
     std::vector<Book> books = LoadBooks();
     books.push_back(newBook);
     SaveBooks(books);
 
+    // Añadir el título del nuevo libro a la lista
     bookList->Append(wxString(newBook.title));
-    statusText->SetLabel("¡Libro añadido!");
+    statusText->SetLabel("¡Libro añadido!"); // Mensaje de éxito
 }
 
+// Método para eliminar un libro
 void Books::OnDeleteBook(wxCommandEvent& event) {
-    int selection = bookList->GetSelection();
-    if (selection != wxNOT_FOUND) {
-        std::vector<Book> books = LoadBooks();
-        books.erase(books.begin() + selection);
-        SaveBooks(books);
+    int selection = bookList->GetSelection(); // Obtener la selección actual de la lista
+    if (selection != wxNOT_FOUND) { // Verificar si hay un libro seleccionado
+        std::vector<Book> books = LoadBooks(); // Cargar los libros
+        books.erase(books.begin() + selection); // Eliminar el libro seleccionado
+        SaveBooks(books); // Guardar la lista actualizada
 
-        bookList->Delete(selection);
-        statusText->SetLabel("¡Libro eliminado!");
+        bookList->Delete(selection); // Eliminar el libro de la lista
+        statusText->SetLabel("¡Libro eliminado!"); // Mensaje de éxito
     }
     else {
-        statusText->SetLabel("No se ha seleccionado ningún libro.");
+        statusText->SetLabel("No se ha seleccionado ningún libro."); // Mensaje de advertencia
     }
 }
 
+// Método para modificar un libro
 void Books::OnModifyBook(wxCommandEvent& event) {
-    int selection = bookList->GetSelection();
-    if (selection != wxNOT_FOUND) {
-        Book modifiedBook;
+    int selection = bookList->GetSelection(); // Obtener la selección actual de la lista
+    if (selection != wxNOT_FOUND) { // Verificar si hay un libro seleccionado
+        Book modifiedBook; // Crear un libro modificado
+
+        // Obtener los valores de los campos de texto y almacenarlos en el libro modificado
         strncpy(modifiedBook.title, titleTextCtrl->GetValue().ToStdString().c_str(), sizeof(modifiedBook.title));
         strncpy(modifiedBook.author, authorTextCtrl->GetValue().ToStdString().c_str(), sizeof(modifiedBook.author));
         strncpy(modifiedBook.genre, genreTextCtrl->GetValue().ToStdString().c_str(), sizeof(modifiedBook.genre));
         modifiedBook.year = wxAtoi(yearTextCtrl->GetValue());
 
-        std::vector<Book> books = LoadBooks();
-        books[selection] = modifiedBook;
-        SaveBooks(books);
+        std::vector<Book> books = LoadBooks(); // Cargar los libros existentes
+        books[selection] = modifiedBook; // Actualizar el libro seleccionado con los nuevos valores
+        SaveBooks(books); // Guardar la lista actualizada
 
-        bookList->SetString(selection, wxString(modifiedBook.title));
-        statusText->SetLabel("¡Libro modificado!");
+        bookList->SetString(selection, wxString(modifiedBook.title)); // Actualizar la lista visualmente
+        statusText->SetLabel("¡Libro modificado!"); // Mensaje de éxito
     }
     else {
-        statusText->SetLabel("No se ha seleccionado ningún libro.");
+        statusText->SetLabel("No se ha seleccionado ningún libro."); // Mensaje de advertencia
     }
 }
 
+// Método para volver a la ventana principal
 void Books::OnBackToMain(wxCommandEvent& event) {
-    wxFrame* mainWindow = new Main_GUI("Main Window",userIsAdmin,ActiveUser);  // Crear instancia de Main_GUI
-    mainWindow->Show();
-    this->Close();  // Cerrar la ventana actual (Books)
+    wxFrame* mainWindow = new Main_GUI("Main Window", userIsAdmin, ActiveUser); // Crear instancia de Main_GUI
+    mainWindow->Show(); // Mostrar la ventana principal
+    this->Close(); // Cerrar la ventana actual (Books)
 }
 
+// Método para manejar la selección de un libro en la lista
 void Books::OnSelectBook(wxCommandEvent& event) {
-    int selection = bookList->GetSelection();
-    if (selection != wxNOT_FOUND) {
-        std::vector<Book> books = LoadBooks();
-        if (selection < books.size()) {
-            const Book& selectedBook = books[selection];
+    int selection = bookList->GetSelection(); // Obtener la selección actual de la lista
+    if (selection != wxNOT_FOUND) { // Verificar si hay un libro seleccionado
+        std::vector<Book> books = LoadBooks(); // Cargar los libros
+        if (selection < books.size()) { // Verificar que la selección sea válida
+            const Book& selectedBook = books[selection]; // Obtener el libro seleccionado
+            // Rellenar los campos de texto con los detalles del libro seleccionado
             titleTextCtrl->SetValue(wxString(selectedBook.title));
             authorTextCtrl->SetValue(wxString(selectedBook.author));
             genreTextCtrl->SetValue(wxString(selectedBook.genre));
@@ -163,28 +180,32 @@ void Books::OnSelectBook(wxCommandEvent& event) {
     }
 }
 
+// Método para cargar los libros desde un archivo
 std::vector<Book> Books::LoadBooks() {
-    std::vector<Book> books;
-    std::ifstream file("books.dat", std::ios::binary);
-    if (!file) return books;
+    std::vector<Book> books; // Vector para almacenar los libros
+    std::ifstream file("books.dat", std::ios::binary); // Abrir el archivo en modo binario
+    if (!file) return books; // Retornar vacío si no se puede abrir el archivo
 
     Book book;
+    // Leer los libros del archivo y almacenarlos en el vector
     while (file.read(reinterpret_cast<char*>(&book), sizeof(Book))) {
         books.push_back(book);
     }
-    file.close();
-    return books;
+    file.close(); // Cerrar el archivo
+    return books; // Retornar el vector de libros
 }
 
+// Método para guardar los libros en un archivo
 void Books::SaveBooks(const std::vector<Book>& books) {
-    std::ofstream file("books.dat", std::ios::binary | std::ios::trunc);
+    std::ofstream file("books.dat", std::ios::binary | std::ios::trunc); // Abrir el archivo en modo binario y truncar
     if (!file) {
-        wxLogError("Error al abrir el archivo para guardar.");
-        return;
+        wxLogError("Error al abrir el archivo para guardar."); // Mensaje de error si no se puede abrir
+        return; // Salir del método
     }
 
+    // Escribir cada libro en el archivo
     for (const auto& book : books) {
         file.write(reinterpret_cast<const char*>(&book), sizeof(Book));
     }
-    file.close();
+    file.close(); // Cerrar el archivo
 }

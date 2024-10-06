@@ -3,17 +3,11 @@
 
 #include <wx/wx.h>
 #include <vector>
-
+#include "Loguin_GUI.H"
 
 
 // Estructura de usuario que contiene el nombre, contraseña y si es administrador o no
-struct User {
-    char username[20];
-    char password[8];
-    bool isAdmin;
 
-    User() : isAdmin(false) {}
-};
 
 // Clase que maneja la ventana de gestión de usuarios
 class GestionarUser : public wxFrame {
