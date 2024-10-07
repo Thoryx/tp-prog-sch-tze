@@ -74,7 +74,7 @@ Main_GUI::Main_GUI(const wxString& title, bool isAdmin, const wxString& activeUs
         vbox->Add(searchBookBtn, 0, wxALL | wxEXPAND, 10);
         vbox->Add(addToFavoritesBtn, 0, wxALL | wxEXPAND, 10);
         vbox->Add(viewFavoritesBtn, 0, wxALL | wxEXPAND, 10);
-       
+        vbox->Add(CloseSesionBtn, 0, wxALL | wxEXPAND, 10);
         vbox->Add(statusText, 0, wxALIGN_CENTER | wxTOP, 10); // Añadir texto de estado
     }
 
